@@ -7,6 +7,7 @@ const [value,tempSetvalue]=useState(data)
         ...data}
       )
     }
+    // console.log(value,setValue)
 return [value,setValue]
 }
 export {UseSignUpDataHOOK}

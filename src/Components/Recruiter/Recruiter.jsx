@@ -15,6 +15,8 @@ import { ClientSpeak } from "./ClientSpeak";
 import { HRinsider } from "./HRinsider";
 import { Footer } from "./Footer";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRecruiters } from "../../Redux/RecruitRedux/action";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -50,7 +52,13 @@ const useStyles = makeStyles(() => ({
 const Recruiter = () => {
     const classes = useStyles()
     const [open, setOpen] = React.useState(false);
-  
+    const list=useSelector(state=>state.recruiter.recruiterList)
+    const dispatch=useDispatch()
+
+    React.useEffect(() => {
+        dispatch(fetchRecruiters())
+    }, [dispatch])
+
     const handleOpen = () => {
         setOpen(true);
     };
@@ -109,7 +117,7 @@ const Recruiter = () => {
                                             <span className={styles.close} onClick={handleClose}></span>
                                         </div>
                                         <div className={`${styles.formData}`}>
-                                            <Form />
+                                            <Form list={list}/>
                                         </div>
                                     </div>
                                 </Fade>

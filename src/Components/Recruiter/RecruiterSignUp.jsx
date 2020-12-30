@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRecruiters } from '../../Redux/RecruitRedux/action';
+import { addRecruiter, fetchRecruiters } from '../../Redux/RecruitRedux/action';
 import styles from "./Recruiter.module.css"
 import { UseSignUpDataHOOK } from './UseSignUpDataHOOK';
+
 const location = [
     "Hyderabad",
     "Bangalore",
@@ -15,6 +16,7 @@ const location = [
     "Kochi",
     "Lucknow"
   ];
+
 const init = {
     name: "",
     email: "",
@@ -27,15 +29,30 @@ const init = {
 
 const RecruiterSignUp = () => {
     const [value, setValue] = UseSignUpDataHOOK(init);
+    const [error,setError]=useState(false)
     const dispatch=useDispatch()
     const list=useSelector(state=>state.recruiter.recruiterList)
     React.useEffect(() => {
         dispatch(fetchRecruiters())
     }, [dispatch])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = {...value};    
+        setValue(formData)
+        // checking whether user already exists or not
+        const temp=list.findIndex(item=>item.contact===value.contact||item.email===value.email)
+        if(temp!==-1){
+            setError(true)
+        }
+        else{
+            setError(false)
+            dispatch(addRecruiter(formData))
+        }
+      };
     return (
         <div className={styles.recruitersignupformdata}>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <input
                         type="text"
@@ -68,8 +85,8 @@ const RecruiterSignUp = () => {
                     <input
                         type="number2"
                         placeholder="Mobile No."
-                        name="phone"
-                        value={value.phone}
+                        name="contact"
+                        value={value.contact}
                         onChange={e => setValue({ [e.target.name]: e.target.value })}
                     />
                 </div>
@@ -100,8 +117,8 @@ const RecruiterSignUp = () => {
                 </div>
                  <p>Location</p>
                  <div>
-                 <select name="day"
-                         value={value.day}
+                 <select name="location"
+                         value={value.location}
                         onChange={e=>setValue({[e.target.name]:e.target.value})}>
                         <option value="">Select Location</option>
                         {location.map((item) => (
@@ -115,6 +132,12 @@ const RecruiterSignUp = () => {
                      <input type="submit" value="Sign Up"/>
                  </div>
             </form>
+            {
+                error && 
+                <div className={styles.error}>
+                    User Already exist
+                </div>
+            }
         </div>
     )
 }
