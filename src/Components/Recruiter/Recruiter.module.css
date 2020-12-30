@@ -1,0 +1,725 @@
+.left_band {
+  width: 612px;
+  display: flex;
+  font-weight: 400;
+  font-size: 12px;
+  color: #333333;
+  line-height: 18px;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.left_band a {
+  height: 50px;
+  overflow: hidden;
+}
+
+.right_band {
+  display: flex;
+  justify-content: space-between;
+  width: 437px;
+  margin-right: 50px;
+}
+
+.right_band ul {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: Roboto;
+  text-align: right;
+  list-style-type: none;
+}
+.recruiterLogin_button {
+ cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+  padding: 6px 12px;
+  text-align: center;
+  box-shadow: 1px 3px 5px 7px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  font-size: 15px;
+  color: #5d6dbe;
+  line-height: 25px;
+  border: none;
+  width:175px;
+  outline: none;
+}
+
+.recruiterLogin_button::before{
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e) -174px -329px no-repeat;
+    content: '';
+    float: left;
+    width: 21px;
+    height: 26px;
+    margin-right: 10px;
+}
+
+.modalLoginData{
+    outline: none;
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    max-width: 450px;
+    min-height: 100px;
+    width: 100%;
+    border-radius: 8px !important;
+}
+
+.loginheader{
+    background: url(https://static2.shine.com/r/s/images/pop_base.png?cfbb7cfd9d81) right no-repeat!important ;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+}
+.modalLoginData input[type='text'], input[type='password']{
+    width: 100% !important;
+    height: 38px;
+    border-radius: 4px;
+    padding: 15px;
+    border: solid 1px #f1efef;
+    font-size: 12px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.modalLoginData input[type='submit']{
+    background-color: #fbaf18;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 700;
+    padding: 7px 20px;
+    margin-right: 8px;
+    border-radius: 25px!important;
+}
+.close{
+   text-align: center;
+    float: right;
+    align-items: center;
+    place-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e) -1px -740px #a1baf4 no-repeat;
+    width: 17px;
+    height: 17px;
+}
+.title{
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 24px;
+    color:#ffffff;
+}
+.formData{
+    padding: 15px 30px 30px 30px;
+}
+.cls_openForgetPasswordDiv{
+    color: #2196f3;
+    margin: 15px 16px 0;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+.topCompanies{
+    left: 70px;
+    float: left;
+    position: absolute;
+    top: 59%;
+    margin-top: -150px;
+    line-height: 18px;
+    color: #fff;
+    width: 756px;
+    height:210px;
+}
+.topCompanies h1{
+    line-height: 55px;
+    font-weight: 600;
+    font-size: 45px;
+    width: 60%;
+}
+.topCompanies p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.yellow_bg{
+    background: #f09927;
+    font-weight: 500;
+    color: #fff;
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+    color: #232434;
+    text-decoration: none;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 25px;
+    overflow: hidden;
+}
+.blue_bg{
+    margin-left: 15px;
+    background: #5D6DBE;
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+    border-color: transparent;
+    text-decoration: none;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 25px;
+    overflow: hidden;
+}
+.blue_bg :hover{
+    background:black;
+}
+.newFlash{
+    width: 44px;
+    height: 25px;
+    display: inline-block;
+    background-color: #f09927;
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -7px;
+    right: -15px;
+     box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.newFlash small{
+    font-weight: 700;
+    left: 14px;
+    top: 10px;
+    position: relative;
+    font-size: smaller;
+
+}
+.twoButtons{
+    margin-top:20px ;
+    display: flex;
+    align-items: center;
+}
+.sideWidget{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    margin-top: -60px;
+    background: #f8fbff;
+    border-radius: 6px 0 0 6px;
+    width: 53px;
+    height: 120px;
+    box-shadow: 2px 2px 1px 2px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+.in{
+    background-image: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e);
+    background-position: -238px -267px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 26px;
+    display: block;
+    border-bottom: solid 1px #f2f4ff;
+    margin: 10px auto;
+}
+.facebook{
+    background-image: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e);
+    background-position: -275px -267px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 26px;
+    display: block;
+    border-bottom: solid 1px #f2f4ff;
+    margin: 10px auto;
+}   
+.twitter{
+    background-image: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e);
+    background-position: -305px -267px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 26px;
+    display: block;
+    border-bottom: solid 1px #f2f4ff;
+    margin: 10px auto;
+}
+
+.recruitersignupform{
+    width: 23%;
+    padding: 3% 2%;
+    border-radius: 4px;
+    box-shadow: 0px 6px 45px 0px rgba(161,161,161,0.29);
+    background: #fff;
+    position: absolute;
+    right: 57px;
+    top: 120px;
+}
+.recruitersignupformdata input[type="text"],input[type="number1"],input[type="number2"]{
+    border:none;
+    outline: none;
+    border-bottom:1px solid black;
+    height: 70px;
+    width: 100%;
+    padding: 1px;
+    border-radius: 0%;
+}
+.recruitersignupformdata input[type="password"]{
+    border:none;
+    outline: none;
+    border-bottom:1px solid black;
+    height: 70px;
+    width: 100%;
+    padding: 1px;
+    border-radius: 0%;
+}
+.recruitersignupformdata input[type='number1']{
+    padding: 0px !important;
+    width: 20%;
+}
+.recruitersignupformdata input[type='number2']{
+    padding: 0px !important;
+    margin-left: 13.2px;
+    width: 75.2%;
+}
+.recruitersignupformdata input[type='submit']{
+    border-radius: 4px!important;
+    background-color: #5D6DBE!important;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1)!important;
+    color: #fff!important;
+    text-align: center;
+    height: 35px;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0 none;
+}
+.recruitersignupformdata select {
+    border:none;
+    outline: none;
+    border-bottom:1px solid black;
+    width: 100%;
+} 
+.radio{
+    place-items: center;
+    display: flex;
+}
+.radio div{
+    margin:10px;
+}
+.radio p{
+    margin-left: -10px;;
+    font-size: 12px;
+}
+.centerContent{
+    margin:0px 109px;
+    padding: 0px 15px;
+}
+.topCompanieshiring{
+    width: 75%;
+    margin: 30px 0 0 30px;
+}
+
+.topCompanieshiring div{
+    flex-wrap: wrap;
+    display: flex;
+    margin:  20px 100px 10px 0px;
+}
+.contentbody{
+    margin:0px 109px;
+    margin-top: 50px;
+}
+
+.contentbody h2{
+        text-align: center;
+        margin: 30px 0px;
+}
+
+.cardData{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cardData div{
+    margin:10px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+}
+.cardData h2{
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+}
+.cardData p{
+    color: #555;
+    font-size: 14px;
+    min-height: 85px;
+    width: 225px;
+    margin: -10px auto 0px;
+    text-align: center;
+}
+
+.jobposting::before{
+    display: inline-block;
+    content: '';
+    width: 51px;
+    height: 43px;
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e);
+    background-position: -78px -397px;
+}
+
+
+.smartsearch::before{
+    display: inline-block;
+    content: '';
+    width: 51px;
+    height: 43px;
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e);
+    background-position: -10px -328px;
+}
+
+.smartmatch::before{
+    display: inline-block;
+    content: '';
+    width: 51px;
+    height: 43px;
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e);
+    background-position: -80px -327px;
+
+}
+
+.knowmore{
+    text-decoration: none;
+    border-radius: 30px;
+    border: solid 1px #5d6dbe;
+    text-align: center;
+    font-size: 13px;
+    width: 100px;
+    height: 29px;
+    line-height: 29px;
+    display: inline-block;
+    margin-top: 10px;
+    color: #5d6dbe;
+}
+
+.createOwnPlan {
+    width: 215px;
+    margin: 30px auto 0;
+    text-align: center;
+}
+.line{
+    height: 1px;
+    position: relative;
+    background-color: #e0e5ec;
+    text-align: center;
+}
+
+.line span{
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    position: relative;
+    top: -12px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    line-height: 9px;
+}
+.ownPlanLink{
+    color:#fff;
+    font-weight: 700;
+    height: 37px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border: 0;
+    border-radius: 25px;
+    background-color: #5D6DBE;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 22px;
+    transition: all 0.3s ease-in-out;
+    padding: 6px 15px;
+    text-align: center;
+}
+
+.ownPlanLink:hover{
+    background-color: #3d4d5c;
+}
+
+.howdoesitwork{
+    display: flex;
+    margin: 0px 324px;
+    padding: 30px 15px;
+    border: 0px;
+}
+.howdoesitworkContent{
+padding-top: 10px;
+padding-right: 15px;
+}
+.howdoesitworkContent h2{
+    margin: 20px;
+    font-weight: 500;
+}
+.howdoesitworkContent p{
+    margin: 20px;
+    font-size: 13px;
+}
+.howdoesitworkImage{
+    padding-top: 10px;
+    padding-right: 15px;
+}
+
+.hirebox{
+    background-color: #fafafa;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.hireboxContent{
+    text-align: center;
+    margin:20px 0px;
+    font-weight: 500;
+}
+.hireboxContent h2{
+    font-weight: 500;
+}
+.hireboxContentDetails{
+    display: flex;
+    margin:0px 130px;
+
+}
+.hireboxContentParts{
+    width: 33.33%;
+    display: flex;
+    padding: 30px;
+    border-right: 1px solid #e0e5ec;
+
+}
+.hireboxContentImage{
+    width: 80px;
+    height: 68px;
+    display: inline-block;
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e) -8px -606px no-repeat;
+    margin-right: 40px;
+    vertical-align: top;
+    border-right: 1px solid #e0e5ec;
+} 
+.hireboxContentImage2{
+    width: 80px;
+    height: 68px;
+    display: inline-block;
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e) -98px -606px no-repeat;
+    margin-right: 40px;
+    vertical-align: top;
+} 
+
+
+.hireboxContentImage3{
+    width: 80px;
+    height: 68px;
+    display: inline-block;
+    background: url(https://static2.shine.com/r/s/images/recruiter_sprite_2019.png?b083693e278e) -173px -606px no-repeat;
+    margin-right: 40px;
+    vertical-align: top;
+} 
+
+.hireboxContentParts li{
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.jobPortal{
+    padding: 8px 10px 0px 10px;
+    margin: 60px 124px ;
+
+}
+
+.heading{
+    margin: 10px auto 25px;
+    width: 100%;
+    font-size: 25px;
+    font-size: 25px;
+    color: #333333;
+    text-align: center;
+    padding-top: 20px;
+    line-height: 35px;
+    font-weight: 500;
+}
+
+.jobPortalContent{
+    display: flex;
+    padding: 0px 100px;
+    justify-content: space-evenly;
+}
+.jobPortalContent div{
+    width: 460px;
+    display: inline-block;
+    background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.07);
+    border-radius: 5px;
+    text-align: left;
+}
+.jobPortalContentInnerStyling {
+    padding: 15px;
+}
+
+.jobPortalContentInnerStyling p {
+    height: 100px;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 10px 10px 0px 0px;
+}
+.faq{
+    margin: 80px 124px ;
+    padding: 0px 200px;
+}
+.faq h2{
+    text-align: center;
+    font-weight: 500;
+    margin:30px 0px;
+}
+.faqQuestions{
+    border-radius: 5px;
+    background-color: #fafafa;
+    margin:0px 0px 8px 0px;
+    padding: 30px 20px;
+}
+.faqQuestions label{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.hrinsider{
+    background: #f8fbff;
+    width: 100%;
+
+}
+
+.hrinsiderCont{
+    margin: 0px 109px;
+}
+.hrinsiderCard{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 10px;
+}
+
+.hrinsiderCard div{
+    margin: 10px;
+    background-color: white;
+    width: 29.3%;
+    height: 400px;
+    overflow-x: hidden;
+}
+.hrinsiderCard h3{
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.hrinsiderCardData p{
+    padding: 5px;
+    height: 100px   ;
+}
+
+.alignCenter {
+    text-align: center;
+}
+.footerMain{
+    margin-top: 10px;
+    padding: 25px 100px 10px;
+}
+
+.footerMidSection{
+    height: 90px;
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    padding: 15px 0px;
+    border-top: 1px solid #e0e5ec;
+    border-bottom: 1px solid #e0e5ec;
+    
+}
+.phoneANDemail{
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3f51b5;
+}
+
+.phone{
+    width: 19px;
+    height: 19px;
+    background: url(https://static2.shine.com/r/s/images/common_sprite.png?f58e7e1e9fa4);
+    background-repeat: no-repeat;
+    background-position: -49px -74px;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+.email{
+    width: 18px;
+    height: 14px;
+    background-image: url(https://static2.shine.com/r/s/images/common_sprite.png?f58e7e1e9fa4);
+    background-repeat: no-repeat;
+    background-position: -72px -74px;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+    margin-left: 25px;
+}
+.footerInfo {
+    color: #798590;
+    margin-bottom: 10px;
+}
+.footerEnd{
+    color: #798590;
+    display: flex;
+    text-align: center;
+    line-height: 30px;
+}
+.footerEndLeft{
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+}
+.footerEndLeft div{
+text-align: center;
+margin-right: 20px;
+}
+.chatBox{
+    position: fixed;
+    z-index: 2;
+    bottom: 10px;
+    right: 5px;
+}
+
+.chatBox button{
+    padding: 15px;
+    border-radius: 100%;
+    text-align: center;
+    outline: none;
+    border:0px ;
+    background: #7751e0!important;
+    background: -moz-linear-gradient(top,#7751e0 0%,#3f51b5 100%)!important;
+    background: -webkit-linear-gradient(top,#7751e0 0%,#3f51b5 100%)!important;
+    background: linear-gradient(to bottom,#7751e0 0%,#3f51b5 100%)!important;
+}
+
+.error{
+    margin-top: 5px;
+    color:red
+}
