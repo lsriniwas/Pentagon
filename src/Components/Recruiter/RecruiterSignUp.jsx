@@ -25,13 +25,13 @@ const init = {
     password: "",
     type: "",
     location:"",
-    "company_name":""
+    company_name:""
 };
 
 const RecruiterSignUp = () => {
+    const history = useHistory()
     const [value, setValue] = UseSignUpDataHOOK(init);
     const [error,setError]=useState(false)
-    const history=useHistory()
     const dispatch=useDispatch()
     const list=useSelector(state=>state.recruiter.recruiterList)
     React.useEffect(() => {
@@ -48,15 +48,12 @@ const RecruiterSignUp = () => {
             setError(true)
         }
         else{
-            setError(false)
-            setValue(init)
-            dispatch(addRecruiter(formData))
+            setError(false) 
+            dispatch(addRecruiter(formData)) 
             dispatch(fetchRecruiters())
-            const location = {
-                pathname: '/recruiter',
-                state: {formData}
-              }
-            history.push(location)
+            alert("Registration Succesful")
+            const location = { pathname: '/recruiter', state: {formData} } 
+            history.push(location) 
         }
       };
     return (
