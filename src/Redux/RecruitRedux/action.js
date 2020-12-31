@@ -1,5 +1,5 @@
 import axios from "axios";
-import { REQUEST_RECRUITER_ISAUTHLOGOUT,FETCH_RECRUITERS_LIST, FETCH_RECRUITERS_LIST_FAILURE, FETCH_RECRUITERS_LIST_SUCCESS, REQUEST_RECRUITER_ISAUTHSUCCESS } from "./actionTypes";
+import { REQUEST_RECRUITER_ISAUTHLOGOUT,FETCH_RECRUITERS_LIST, FETCH_RECRUITERS_LIST_FAILURE, FETCH_RECRUITERS_LIST_SUCCESS, REQUEST_RECRUITER_ISAUTHSUCCESS, REQUEST_RECRUITER_POSTED_JOBS } from "./actionTypes";
 
 const fetchRecruiterList=()=>({
     type:FETCH_RECRUITERS_LIST
@@ -15,11 +15,16 @@ const fetchRecruiterListFailure=(err)=>({
 const recruiterIsAuth=()=>({
     type:REQUEST_RECRUITER_ISAUTHSUCCESS
 })
+const fetchJobs=(payload)=>({
+  type:REQUEST_RECRUITER_POSTED_JOBS,
+  payload
+})
 const fetchRecruiters=()=>dispatch=>{
     dispatch(fetchRecruiterList())
+
     var config = {
         method: 'get',
-        url: 'http://localhost:3004/recruiters',
+        url: 'https://pentagon-shine.herokuapp.com/recruiters',
         headers: { 
           'Content-Type': 'application/json'
         }
@@ -32,10 +37,9 @@ export {fetchRecruiters}
 
 const addRecruiter=payload=>dispatch=>{
     dispatch(fetchRecruiterList())
-
     var config = {
         method: 'post',
-        url: 'http://localhost:3004/recruiters',
+        url: 'https://pentagon-shine.herokuapp.com/recruiters',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -43,15 +47,16 @@ const addRecruiter=payload=>dispatch=>{
       };
 
       return axios(config)
-            .then(({data})=>dispatch(fetchRecruiterListSuccess(data)))
+            .then(()=>dispatch(fetchRecruiters()))
             .catch(err=>{dispatch(fetchRecruiterListFailure(err))})
 }
 export {addRecruiter}
 
 const loginRecruiter=(payload)=>dispatch=>{
-  dispatch(fetchRecruiterList())
 
   dispatch(recruiterIsAuth())
+
+  dispatch(fetchRecruiterList())
 }
 
 export {loginRecruiter}
@@ -62,3 +67,20 @@ const logoutRecruiter=()=>({
 })
 
 export {logoutRecruiter}
+
+
+const fetchJobsPosted=(payload)=>dispatch=>{
+  dispatch(fetchRecruiterList())
+  var config = {
+    method: 'get',
+    url: `https://pentagon-shine.herokuapp.com/jobs?recruiter_id=${payload}`,
+    headers: { 
+      'Authorization': 'Basic Z28tY29yb25hLWFkbWluOjU1NzdZdnpVNGJLNjNhMVdJUTNaMDQzSA=='
+    }
+  };
+  return axios(config)
+         .then(({data})=>dispatch(fetchJobs(data)))
+         .catch(err=>{dispatch(fetchRecruiterListFailure(err))})
+}
+export {fetchJobsPosted}
+

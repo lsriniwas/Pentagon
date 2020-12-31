@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
-import { loginRecruiter } from '../../Redux/RecruitRedux/action'
+import { fetchRecruiters, loginRecruiter } from '../../Redux/RecruitRedux/action'
 import styles from "./Recruiter.module.css"
 
 export const Form = ({list}) => {
@@ -15,8 +15,8 @@ export const Form = ({list}) => {
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        const temp=lists.find(item=>item.email===email&&item.password===password)
-        if(temp===undefined){  
+        const formData=lists.find(item=>item.email===email&&item.password===password)
+        if(formData===undefined){  
            setError(true)
         }
         else{
@@ -24,7 +24,7 @@ export const Form = ({list}) => {
             dispatch(loginRecruiter())
             const location = {
                 pathname: '/recruiter-profile',
-                state: {temp}
+                state: {formData}
               }
             history.push(location)
         }
