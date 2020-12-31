@@ -23,4 +23,3 @@ const Navbar = () => {
 
 export default Navbar
 
-// <img src={process.env.PUBLIC_URL + '/yourPathHere.jpg'} />
