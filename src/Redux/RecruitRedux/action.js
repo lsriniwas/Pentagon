@@ -7,6 +7,10 @@ import {
   REQUEST_RECRUITER_ISAUTHSUCCESS,
   REQUEST_RECRUITER_POSTED_JOBS,
 } from "./actionTypes";
+
+
+
+let i=0;
 const fetchRecruiterList = () => ({
   type: FETCH_RECRUITERS_LIST,
 });
@@ -21,11 +25,9 @@ const fetchRecruiterListFailure = (err) => ({
 const recruiterIsAuth = () => ({
   type: REQUEST_RECRUITER_ISAUTHSUCCESS,
 });
-const fetchJobs = (payload) => ({
-  type: REQUEST_RECRUITER_POSTED_JOBS,
-  payload,
-});
-const fetchRecruiters = () => (dispatch) => {
+
+
+ const fetchRecruiters  = () => (dispatch) => {
   dispatch(fetchRecruiterList());
   var config = {
     method: "get",
@@ -35,12 +37,14 @@ const fetchRecruiters = () => (dispatch) => {
     },
   };
   return axios(config)
-    .then(({ data }) => dispatch(fetchRecruiterListSuccess(data)))
+    .then(({ data }) => {
+      console.log("Data",data)
+      dispatch(fetchRecruiterListSuccess(data))})
     .catch((err) => {
       dispatch(fetchRecruiterListFailure(err));
     });
 };
-export { fetchRecruiters };
+export { fetchRecruiters };   
 
 const addRecruiter = (payload) => (dispatch) => {
   dispatch(fetchRecruiterList());
@@ -53,35 +57,25 @@ const addRecruiter = (payload) => (dispatch) => {
     data: payload,
   };
   return axios(config)
-    .then(() => dispatch(fetchRecruiterList()))
+    .then(() => dispatch(fetchRecruiters()))
     .catch((err) => {
       dispatch(fetchRecruiterListFailure(err));
     });
 };
 export { addRecruiter };
+
+
 const loginRecruiter = (payload) => (dispatch) => {
   dispatch(recruiterIsAuth());
-  dispatch(fetchRecruiterList());
+  dispatch(fetchRecruiters());
 };
 export { loginRecruiter };
+
+
+
 const logoutRecruiter = () => ({
   type: REQUEST_RECRUITER_ISAUTHLOGOUT,
 });
 export { logoutRecruiter };
-const fetchJobsPosted = (payload) => (dispatch) => {
-  dispatch(fetchRecruiterList());
-  var config = {
-    method: "get",
-    url: `https://pentagon-shine.herokuapp.com/jobs?recruiter_id=${payload}`,
-    headers: {
-      Authorization:
-        "Basic Z28tY29yb25hLWFkbWluOjU1NzdZdnpVNGJLNjNhMVdJUTNaMDQzSA==",
-    },
-  };
-  return axios(config)
-    .then(({ data }) => dispatch(fetchJobs(data)))
-    .catch((err) => {
-      dispatch(fetchRecruiterListFailure(err));
-    });
-};
-export { fetchJobsPosted };
+
+

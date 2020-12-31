@@ -1,5 +1,5 @@
 import { useState } from "react"
-const UseSignUpDataHOOK=(data)=>{
+const CustomHook=(data)=>{
 const [value,tempSetvalue]=useState(data)
     const setValue=(data)=>{
       tempSetvalue(
@@ -9,5 +9,5 @@ const [value,tempSetvalue]=useState(data)
     }
 return [value,setValue]
 }
-export {UseSignUpDataHOOK}
+export {CustomHook}
 

@@ -28,28 +28,20 @@ const useStyles = makeStyles(() => ({
 
 const RecruiterProfile = () => {
     const classes=useStyles()
-    const history=useHistory()
-    const[presentUser,setPresentuser]=useState(history.location.state)
-    const jobsList=useSelector(state=>state.recruiter.jobs)
     const dispatch = useDispatch()
-
-    React.useEffect(()=>{
-        dispatch(fetchJobsPosted(presentUser.formData.id))
-    },[dispatch])
-
     const handleLogout=()=>{
         dispatch(logoutRecruiter())
     }
     return (
         <div>
-             <AppBar className={classes.root} position="absolute">
+             <AppBar className={classes.root} position="relative">
                 <Box display="flex" justifyContent="space-between" >
                 <div className={styles.left_band}>
                         <a href="/" >
                             <img src={process.env.PUBLIC_URL + '/navbarImg.png'} alt="logo" />
                         </a>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="/home">Home</NavLink>
+                            <NavLink className={classes.navLink} to="/">Home</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
                             <NavLink className={classes.navLink} to="about-us">About us</NavLink>
@@ -72,7 +64,6 @@ const RecruiterProfile = () => {
             </AppBar>
               
               <ProfileContainer/>
-
               
         </div>
     )

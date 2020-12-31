@@ -2,7 +2,6 @@ import { FETCH_RECRUITERS_LIST, FETCH_RECRUITERS_LIST_FAILURE, FETCH_RECRUITERS_
 const initialState={
     recruiterIsAuth:false,
     recruiterList:[],
-    jobs:[],
     loading:false,
     error:false,
     error_msg:""
@@ -35,11 +34,6 @@ const reducer=(state = initialState, { type, payload }) => {
         return{
             ...state,
             recruiterIsAuth:false
-        }
-    case REQUEST_RECRUITER_POSTED_JOBS:
-        return{
-            ...state,
-            jobs:payload
         }
     default:
         return state

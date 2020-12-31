@@ -12,5 +12,5 @@ export const PrivateRoute = ({children}) => {
                     ) : (
                             <Redirect to="/recruiter" />
 
-                        )           
+                    )           
 }
