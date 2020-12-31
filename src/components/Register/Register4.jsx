@@ -45,7 +45,7 @@ const Register4 = props => {
     }
 
     return (
-        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, marginLeft: "100px" }}>
+        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, margin:"auto",marginTop:"50px" }}>
             <h1>Have you ever worked?</h1>
             <div className={classes.root} >
                 <Paper onClick={() => setExperienced(true)} variant="outlined" square ><img src='exp.png' alt="exp" /><br />Yes, I have Worked</Paper>

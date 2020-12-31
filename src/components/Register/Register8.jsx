@@ -39,7 +39,7 @@ const Register8 = props => {
     }
 
     return (
-        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, marginLeft: "100px" }}>
+        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, margin:"auto",marginTop:"50px" }}>
             <h1>Browse & upload resume</h1>
             <h3>Upload your updated resume and you are done!</h3>
             <Upload {...props}>

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { Loginreq } from "../redux/actions"
+import { Loginreq } from "../../redux/actions"
 import { Route, Redirect } from "react-router-dom"
 
 class Login extends Component {
@@ -50,7 +50,7 @@ class Login extends Component {
                     <input type="submit" value="submit" />
                 </form>
                 { isAuth ? "LOGGED IN" : "LOGGED OUT"}
-        {isAuth ?  <Redirect to="/home" />:""}
+        {isAuth ?  <Redirect to="/" />:""}
             </div>
         )
     }

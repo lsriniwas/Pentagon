@@ -38,7 +38,7 @@ const Register7 =props=>{
     }
 
         return (
-            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, marginLeft:"100px"}}>
+            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px"}}>
                 <h1>Tell us about your Skills</h1>
                 <h3>Add 6 or more skills to get 3X more recruiter views</h3>
                  <TextField id="outlined-basic" label="Enter Skill Name" variant="outlined" onChange={(e)=>setSkill(e.target.value)}/><br/>

@@ -32,7 +32,7 @@ const Register2 =(props)=>{
     }
 
   return (
-            <div  style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, marginLeft:"100px"}}>
+            <div  style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px"}}>
                 <h1>Welcome {props.name}</h1>
                 <h3>Thanks for registering with us. Complete your profile and find the right job in a few steps</h3>
                 <h2>What is your identity?</h2>

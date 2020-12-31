@@ -21,7 +21,7 @@ export const authReducer = (state = initState, { type,payload }) => {
             console.log(payload)
             return {
                 isAuth: true,
-                userdata: payload,
+                userdata: [...payload],
                 error: null
             }
         }

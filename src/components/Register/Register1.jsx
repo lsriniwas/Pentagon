@@ -24,7 +24,7 @@ const Register1 =props=>{
     }
 
         return (
-            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, marginLeft:"100px"}}>
+            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px"}}>
                  <TextField id="outlined-basic" label="Name" variant="outlined" onChange={(e)=>{setName(e.target.value)}} /><br/>
                  <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e)=>{setEmail(e.target.value)}} /><br/>
                  <TextField id="outlined-basic" label="Mobile Number" variant="outlined" onChange={(e)=>{setMobile(e.target.value)}} /><br/>

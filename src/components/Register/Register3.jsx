@@ -35,7 +35,7 @@ const Register3 =props=>{
 
 
   return (
-            <div  style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, marginLeft:"100px"}}>
+            <div  style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px"}}>
                 <h1>Which city do you live in?</h1>
                 
                 <div className={classes.root} >

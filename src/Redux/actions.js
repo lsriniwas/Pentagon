@@ -52,28 +52,17 @@ export const Loginreq = (uname, pass) => (dispatch) => {
     console.log("Initiating Login")
     dispatch(loginRequest(uname, pass))
     const config = {
-        method: 'post',
-        url: 'https://masai-api-mocker.herokuapp.com/auth/login',
-        data: {
-            password: pass,
-            username: uname
+        method: 'get',  
+        url: `http://localhost:3004/users?email=${uname}&password=${pass}`,
+        headers: { 
+          'Authorization': 'Basic Z28tY29yb25hLWFkbWluOjU1NzdZdnpVNGJLNjNhMVdJUTNaMDQzSA=='
         }
-    }
+      };
 
-    return axios(config).then((res) => {
-        console.log("logging in",uname,res.data.token)
-        axios({
-            method: 'get',
-        url: `https://masai-api-mocker.herokuapp.com/user/${uname}`,
-        headers: {
-            'Authorization': `Bearer ${res.data.token}` 
-          }
-        }).then((res)=>{
+    return axios(config).then((res)=>{
         console.log("logged in",res)
         dispatch(loginSuccess(res.data))
-    })
-    })
-        .catch((err) => {
+    }).catch((err) => {
             console.log("error",err)
             dispatch(loginFailure(err))
         })
@@ -85,7 +74,7 @@ export const Regreq = (payload) => (dispatch) => {
     dispatch(registerRequest(payload))
     const config = {
         method: 'post',
-        url: 'https://masai-api-mocker.herokuapp.com/auth/register',
+        url: 'http://localhost:3004/users',
         data: payload
     }
 

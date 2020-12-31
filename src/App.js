@@ -1,24 +1,17 @@
 import React from "react"
 import './App.css';
 import {Routes} from "./Routes/Routes"
-export class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.input = React.createRef()
-
-  }
+import LandingPage from './components/Landing/LandingPage';
 
 
-  render() {
-    return (
-      <div className="App">
-        <Routes></Routes>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <div className="App">
+      <Routes></Routes>
+      {/* <LandingPage/> */}
+    </div>
+  );
 }
 
-
-
-export default App
+export default App;
 

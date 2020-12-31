@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { Regreq } from "../../redux/actions"
+
 import { useSelector } from "react-redux"
+import { Regreq } from "../../redux/actions"
+import {useDispatch} from "react-redux"
 import { Register1 } from "./Register1"
 import { Register2 } from "./Register2"
 import { Register3 } from "./Register3"
@@ -11,11 +13,16 @@ import { Register5 } from "./Register5"
 import { Register6 } from "./Register6"
 import { Register7 } from "./Register7"
 import { Register8 } from "./Register8"
+import {RegProgress} from "./RegProgress"
+import RegNav from "./RegNav"
+import RegFooter from "./RegFooter"
 
 
 const Register =()=>{
-   const [stage,setStage]=React.useState(0)
+   const [stage,setStage]=React.useState(1)
    const [data,setData]=React.useState({})
+   const [step,setStep]=React.useState(0)
+   const dispatch = useDispatch()
 
    
     const handleNext=()=>{
@@ -33,19 +40,29 @@ const Register =()=>{
         else if(input.company){
             setStage(5)
         }
-        else setStage(stage+1)        
+        else setStage(stage+1) 
+        
+        if(stage==1)setStep(0)
+        else if (stage==2)setStep(1)
+        else if (stage==3)setStep(2)
+        else if (stage==5)setStep(3)
+        else if (stage==6)setStep(4)
+        else if (stage==7)setStep(5)
     }
 
     const handleSubmitfinal=()=>{
         console.log(data)
-        //redux call and thunk and api
-        //directly trigger isAuth and land on homepage      
+        dispatch(Regreq(data))   
     }
 
     
         return (
             <div >
+                <RegNav></RegNav><br/>
                 <button onClick={handleNext}>NEXT</button>
+                <RegProgress
+                stage={step}                
+                />
                 <div>{stage}</div>
                 {
                     stage==1 && 
@@ -103,9 +120,11 @@ const Register =()=>{
                 {
                     stage==8 && 
                     <Register8
-                    handleSubmit={handleSubmit}
+                    handleSubmit={handleSubmitfinal}
                     />
                 }
+
+                <RegFooter></RegFooter>
 
             </div>
         )

@@ -39,7 +39,7 @@ const Register4A = props => {
     }
 
     return (
-        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, marginLeft: "100px" }}>
+        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, margin:"auto",marginTop:"50px" }}>
             <h1>Tell us in which company you are working?</h1>
             <h3>If you are not presently working, please enter the company you worked with most recently</h3>
             <TextField id="outlined-basic" label="Company" variant="outlined" onChange={(e) => { setCompany(e.target.value) }} /><br />
