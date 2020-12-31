@@ -1,5 +1,4 @@
 import { FETCH_RECRUITERS_LIST, FETCH_RECRUITERS_LIST_FAILURE, FETCH_RECRUITERS_LIST_SUCCESS, REQUEST_RECRUITER_ISAUTHLOGOUT, REQUEST_RECRUITER_ISAUTHSUCCESS, REQUEST_RECRUITER_POSTED_JOBS } from "./actionTypes";
-
 const initialState={
     recruiterIsAuth:false,
     recruiterList:[],
@@ -46,5 +45,4 @@ const reducer=(state = initialState, { type, payload }) => {
         return state
     }
 }
-
 export {reducer}
