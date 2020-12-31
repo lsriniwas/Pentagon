@@ -9,12 +9,12 @@ const Routes=()=>{
     return(
         <div>
             <Switch>
-               <Route path="/">
-                <LandingPage/>
-              </Route>
-              <Route path="/recruiter" exact>
+                <Route path="/" exact>
+                    <LandingPage />
+                </Route>
+                <Route path="/recruiter" exact>
                     <Recruiter/>
-               </Route>
+                </Route>
                 <PrivateRoute path="/recruiter-profile">
                     <RecruiterProfile />
                 </PrivateRoute>

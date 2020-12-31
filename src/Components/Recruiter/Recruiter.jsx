@@ -11,7 +11,6 @@ import { Howdoesitwork } from "./Howdoesitwork";
 import { HireBox } from "./HireBox";
 import { JobPortal } from "./JobPortal";
 import { Faq } from "./FAQ";
-import { ClientSpeak } from "./ClientSpeak";
 import { HRinsider } from "./HRinsider";
 import { Footer } from "./Footer";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
