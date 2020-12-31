@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { addRecruiter, fetchRecruiters } from '../../Redux/RecruitRedux/action';
 import styles from "./Recruiter.module.css"
 import { UseSignUpDataHOOK } from './UseSignUpDataHOOK';
@@ -30,6 +31,7 @@ const init = {
 const RecruiterSignUp = () => {
     const [value, setValue] = UseSignUpDataHOOK(init);
     const [error,setError]=useState(false)
+    const history=useHistory()
     const dispatch=useDispatch()
     const list=useSelector(state=>state.recruiter.recruiterList)
     React.useEffect(() => {
@@ -47,7 +49,14 @@ const RecruiterSignUp = () => {
         }
         else{
             setError(false)
+            setValue(init)
             dispatch(addRecruiter(formData))
+            dispatch(fetchRecruiters())
+            const location = {
+                pathname: '/recruiter',
+                state: {formData}
+              }
+            history.push(location)
         }
       };
     return (
