@@ -1,0 +1,71 @@
+.split_view {
+    display: flex;
+    margin-top: 100px;
+}
+
+.list_section {
+    margin: 10px;
+    padding: 1rem;
+    border-radius: 0;
+    background-color: #fff;
+}
+.list_section:hover {
+    background: #f6faff;
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 #99a6eb, 0 0 10px 0 rgba(0,0,0,0.1)
+}
+
+.job_list_left_box_title {
+    font-size: 17px;
+    color: #303e4b;
+    font-family: "PT Sans",sans-serif;
+    font-weight: 700;
+    padding: 0 0 5px 0;       
+}
+.company_name {
+    font-family: "PT Sans",sans-serif;
+    color: #505e6b;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+.company_name ~ ul {
+    display: flex;
+}
+.company_name ~ ul li {
+    font-family: "PT Sans",sans-serif;
+    margin-left: 1rem;
+    width: 30%;
+    color: #505e6b;
+    font-size: 14px;
+    list-style: square;
+}
+
+.company_name ~ ul ~ p {
+    font-family: "PT Sans",sans-serif;
+    color: #505e6b;
+    margin: 0.5rem 0rem;
+    font-size: 12px;
+}
+
+
+
+.job_details {
+    background-image: linear-gradient(129deg, #99a1ed 0%, #b18ace 100%);
+    box-shadow: 0 0 16px 0 rgba(135,142,172,0.2);
+    border-radius: 4px;
+    color: #fff;
+    z-index: 3;
+    transition: all 0.5s ease;
+    padding: 1rem;
+    margin: 0rem 0.5rem;
+}
+
+.job_details_mid {
+    display: flex;
+}
+.job_details_mid p {
+    display: flex;
+    align-items: center;
+    margin: 0.6rem 2rem 0.6rem 0rem;
+    font-size: 12px;
+}
