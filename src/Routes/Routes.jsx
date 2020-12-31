@@ -1,3 +1,5 @@
+
+import LandingPage from '../Components/Landing/LandingPage'
 import { Route, Switch } from "react-router-dom"
 import { Recruiter } from "../Components/Recruiter/Recruiter"
 import { RecruiterProfile } from "../Private/Recruiter_Profile/RecruiterProfile"
@@ -7,9 +9,12 @@ const Routes=()=>{
     return(
         <div>
             <Switch>
-                <Route path="/recruiter" exact>
+               <Route path="/">
+                <LandingPage/>
+              </Route>
+              <Route path="/recruiter" exact>
                     <Recruiter/>
-                </Route>
+               </Route>
                 <PrivateRoute path="/recruiter-profile">
                     <RecruiterProfile />
                 </PrivateRoute>
