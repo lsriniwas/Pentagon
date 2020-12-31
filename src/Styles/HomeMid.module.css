@@ -577,6 +577,11 @@
     background: #e78f10;
 }
 
+.ad_banner {
+    text-align: center;
+    margin: 3rem auto;
+}
+
 .footer {
     background: url(https://static1.shine.com/c/s1/images/candidate/new/wave_blue.gif?082845ca1c59) left top #f6faff repeat-x;
     width: 100%;
@@ -584,5 +589,56 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    height: 300px;
+    height: 400px;
+}
+.footer_content {
+    padding-bottom: 1rem;
+    margin-right: 2rem;
+    height: 350px;
+    border-bottom: 1px solid rgba(163, 163, 163, 0.282);
+}
+.footer_top {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5rem;
+}
+.footer * {
+    list-style: none;
+}
+.footer_top p {
+    margin: 1rem 0rem;
+    font-size: 13px;
+    color: #4456BB;
+}
+
+.footer_top strong {
+    font-size: 14px;
+    color : #505E6B;
+}
+
+.download_app {
+    background: #fff;
+    box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+    width: 150px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #5364c4;
+    text-align: center;
+    padding: 15px;
+    border: solid 1px #5364c4;
+    margin-top: 3rem;
+}
+
+.footer_base {
+    margin: 0.6rem 0rem;
+    font-size: 11px;
+    color: #546473;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_base span {
+    padding: 0px 6px;
+}
+.footer_base_right {
+    margin-right: 2rem;
 }
