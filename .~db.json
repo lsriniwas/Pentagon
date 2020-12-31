@@ -29,6 +29,16 @@
       "location": "Kolkata",
       "company_name": "",
       "id": 3
+    },
+    {
+      "name": "CHARLESON",
+      "email": "CHARLESON",
+      "contact": "12312313123",
+      "password": "CHARLESON",
+      "type": "Company",
+      "location": "Bangalore",
+      "company_name": "",
+      "id": 4
     }
   ],
   "users": [
