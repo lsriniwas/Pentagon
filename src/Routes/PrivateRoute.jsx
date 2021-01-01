@@ -15,8 +15,6 @@ export const PrivateRoute = ({children}) => {
                            {children}
                         </div>
                     ):
-                    
-                    
                     (
                             <Redirect to="/" />
 

@@ -70,6 +70,7 @@ export default function JobListingContent({ data }) {
                             <h3>Key Skills</h3>
                             <ul>
                                 {
+                                    job.skills.length>0 && 
                                     job.skills.split(",").map(skill => <li>{skill}</li>)
                                 }
                             </ul>
