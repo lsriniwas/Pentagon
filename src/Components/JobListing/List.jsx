@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import styles from '../../Styles/JobListing.module.css'
-
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { apply_job} from '../../Redux/user/actions';
+import { job_apply } from '../../Redux/JobsRedux/actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
 export default function JobListingContent({ data }) {
   const classes = useStyles();
   const [id, setId] = useState("1")
+  const userdata = useSelector((state) => state.auth.userdata)
+  const dispatch = useDispatch()
   const handleClick = (jobId) => {
     setId(jobId)
   }
@@ -34,6 +39,20 @@ export default function JobListingContent({ data }) {
           setId(data[0].id)
       }
   },[data])
+
+  const handleApply=(appliedids)=>{
+      console.log(id,userdata.id)
+      const payload1={
+          jobs_applied:[...userdata.jobs_applied,id]
+      }
+    //   console.log(payload1)
+    //   dispatch(apply_job(payload1,userdata.id))
+      console.log(appliedids)
+      const payload2={
+          applied:[...appliedids,userdata.id]
+      }
+      dispatch(job_apply(payload2,id))
+  }
 
   return (
       <div className={styles.split_view}>
@@ -62,7 +81,7 @@ export default function JobListingContent({ data }) {
                                 <p><img src={process.env.PUBLIC_URL + '/shine_images/location_pin.png'} alt=""/><span>{job.city}</span></p>
                             </div>
                             <div className={styles.job_details_base}>
-                                <div className={styles.orange_button}>Apply</div>
+                                <div className={styles.orange_button} onClick={()=>handleApply(job.applied)}>Apply</div>
                                 <p>Posted : {job.date}</p>
                             </div>
                         </div>
@@ -70,7 +89,7 @@ export default function JobListingContent({ data }) {
                             <h3>Key Skills</h3>
                             <ul>
                                 {
-                                    job.skills.split(",").map(skill => <li>{skill}</li>)
+                                   job.skills.length>0&& job.skills.split(",").map(skill => <li>{skill}</li>)
                                 }
                             </ul>
                         </div>

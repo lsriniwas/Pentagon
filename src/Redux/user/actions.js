@@ -1,4 +1,4 @@
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS,REGISTER_REQUEST,REGISTER_SUCCESS,REGISTER_FAILURE,LOGOUT } from "./actionTypes"
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS,REGISTER_REQUEST,REGISTER_SUCCESS,REGISTER_FAILURE,LOGOUT,APPLY_JOB } from "./actionTypes"
 import axios from "axios"
 const loginRequest = (uname, pass) => {
     return {
@@ -48,19 +48,19 @@ export const logout = () => {
     }
 }
 
-export const Loginreq = (uname, pass) => (dispatch) => {
+export const Loginreq = (email, pass) => (dispatch) => {
     console.log("Initiating Login")
-    dispatch(loginRequest(uname, pass))
+    dispatch(loginRequest(email, pass))
     const config = {
         method: 'get',  
-        url: `https://pentagon-shine.herokuapp.com/users?email=${uname}&password=${pass}`,
+        url: `https://pentagon-shine.herokuapp.com/users?email=${email}&password=${pass}`,
         headers: { 
           'Authorization': 'Basic Z28tY29yb25hLWFkbWluOjU1NzdZdnpVNGJLNjNhMVdJUTNaMDQzSA=='
         }
       };
 
     return axios(config).then((res)=>{
-        console.log("logged in",res.data[0])
+        console.log("logged in",res)
         dispatch(loginSuccess(res.data[0]))
     }).catch((err) => {
             console.log("error",err)
@@ -80,11 +80,31 @@ export const Regreq = (payload) => (dispatch) => {
     }
 console.log("1231",payload)
     return axios(config).then((res) => {
-        console.log("1",res)
-        console.log("2",res.data)
+        
         dispatch(registerSuccess(res.data))
     }).catch((err) => {
         dispatch(registerFailure(err))
+    })
+        
+}
+
+export const apply_job = (payload,id) => (dispatch) => {
+    
+    dispatch(registerRequest())
+    const config = {
+        method: 'patch',
+        url: `https://pentagon-shine.herokuapp.com/users/${id}`,
+        data: payload
+    }
+console.log("1231",payload)
+    return axios(config).then((res) => {
+        axios(`https://pentagon-shine.herokuapp.com/users/${id}`).then(
+            (res)=>{console.log(res.data)
+                dispatch(loginSuccess(res.data))
+            })
+    }).catch((err) => {
+        console.log("error")
+        // dispatch(registerFailure(err))
     })
         
 }

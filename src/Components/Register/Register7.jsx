@@ -27,7 +27,7 @@ const Register7 =props=>{
     
     const handleNext=()=>{
         const payload={
-            skill:skills
+            skills:skills
 
         }
         console.log(payload)

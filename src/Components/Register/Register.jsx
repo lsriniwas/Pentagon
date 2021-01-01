@@ -21,7 +21,7 @@ import { Route, Redirect } from "react-router-dom"
 
 const Register =()=>{
    const [stage,setStage]=React.useState(1)
-   const [data,setData]=React.useState({"dob":"02/02/1992","jobs_applied":[]})
+   const [data,setData]=React.useState({dob:"02/02/1992",jobs_applied:[],matched:[],saved:[],job_role:"",job_location:"",job_type:"",department:"",industry:"",shift:""})
    const [step,setStep]=React.useState(0)
    const dispatch = useDispatch()
    const isAuth = useSelector((state) => state.auth.isAuth)
