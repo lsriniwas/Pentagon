@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 const LandingPage = () => {
     return (
         <div>
-            <Navbar/> {/* Provide route to Recruiter page inside Post a Job button on Navbar  */}
+            <Navbar/> 
             <LandingPageContent/>
         </div>
     )
