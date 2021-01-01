@@ -42,7 +42,7 @@ const RecruiterProfile = () => {
                             <NavLink className={classes.navLink} to="/">Home</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="about-us">About us</NavLink>
+                            <NavLink className={classes.navLink} to="/">About us</NavLink>
                         </Grid>   
                     </div>
                     <div className={styles.right_band}>

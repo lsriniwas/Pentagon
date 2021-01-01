@@ -73,19 +73,19 @@ const Recruiter = () => {
                             <img src={process.env.PUBLIC_URL + '/navbarImg.png'} alt="logo" />
                         </a>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="/home">Home</NavLink>
+                            <NavLink className={classes.navLink} to="/">Home</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="about-us">About us</NavLink>
+                            <NavLink className={classes.navLink} to="/">About us</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="hiring-plans">Hiring Plans</NavLink>
+                            <NavLink className={classes.navLink} to="/">Hiring Plans</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="job-seeker">Job Seeker?</NavLink>
+                            <NavLink className={classes.navLink} to="/">Job Seeker?</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="hr-insider">HR Insider</NavLink>
+                            <NavLink className={classes.navLink} to="/">HR Insider</NavLink>
                         </Grid>
                     </div>
                     <div className={styles.right_band}>
