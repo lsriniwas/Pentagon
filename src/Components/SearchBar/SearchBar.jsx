@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { SearchBar2 } from './SearchBar2'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import 'antd/dist/antd.css';
+import { Input } from 'antd';
 
 
 const SearchBarWrapper = styled.div`
@@ -22,16 +24,12 @@ padding-right:20px;
 `
 
 
-const Input = styled.input`
-border:none;
-outline:none;
-flex:1;
-`
+
 
 function SearchBar() {
+    const { Search } = Input;
+    const [open, setOpen] = React.useState(false);
 
-    const [open, setOpen] = React.useState(false);    
-    
 
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -39,9 +37,9 @@ function SearchBar() {
             margin: "auto",
             height: "200px",
             width: "100%",
-            backgroundColor:"white",
+            backgroundColor: "white",
             border: "2px solid #000",
-            marginTop:"100px"
+            marginTop: "100px"
 
         }
     }));
@@ -58,19 +56,14 @@ function SearchBar() {
 
     return (
         <>
-            <SearchBarWrapper>
-                <IconImage
-                    src="https://www.flaticon.com/svg/static/icons/svg/269/269128.svg"></IconImage>
-                <Input onClick={() => setOpen(true)}></Input>
-            </SearchBarWrapper>
-
+            <Search placeholder="Job title, skills" onClick={() => setOpen(true)} enterButton  style={{width:"50%", marginLeft:"25%", marginTop:"30px", borderRadius:"5px"}}/>
             <Modal className={classes.paper}
                 open={open}
                 onClose={handleCancel}
             >
-                
-                    <SearchBar2/>
-                
+
+                <SearchBar2 />
+
 
             </Modal>
 
