@@ -54,9 +54,12 @@ div{
     width: 250px;
     height: 250px;
     margin-bottom: 20px;
-    background-color: #94caff;
+    
 }
-
+.advertisementfirst img,.advertisementsecond img{
+    width:250px;
+    height:250px;
+}
 .mainContentHeader{
     display: flex;
 }
@@ -64,15 +67,35 @@ div{
     border:0.3px solid black;
     margin-right: 3px;
     outline: none;    
-    width: 33.33%;
+    width: 50%;
     padding: 5px;
     font-size: 20px;
     text-align: center;
     background-color: white;
-    
 }
 
 .selectOption{
     border: 1px solid #e7e7e7;;
     margin-top: 10px;
+}
+
+.formData{
+    padding:10px;
+}
+.formInput input{
+    margin-bottom: 50px;
+}
+.paper_temp{
+    padding: 20px;
+}
+.modal{
+    background-color: white;
+    border-radius: 5px;
+    width:50%;
+    padding: 20px !important;
+}
+.profileHeader{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
 }

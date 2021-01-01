@@ -38,7 +38,6 @@ const recruiterIsAuth = () => ({
   };
   return axios(config)
     .then(({ data }) => {
-      console.log("Data",data)
       dispatch(fetchRecruiterListSuccess(data))})
     .catch((err) => {
       dispatch(fetchRecruiterListFailure(err));

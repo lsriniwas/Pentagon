@@ -11,7 +11,8 @@ import { ProfileContainer } from './ProfileContainer'
 
 const useStyles = makeStyles(() => ({
     root:{
-        padding:"10px 10px 0px 10px"
+        padding:"10px 10px 0px 10px",
+        zIndex:800
     },
     navLink: {
         fontFamily: `Roboto,Arial`,
@@ -21,9 +22,6 @@ const useStyles = makeStyles(() => ({
         lineHeight: "18px",
         fontWeight: 900,
     },
-    
-
-
 }));
 
 const RecruiterProfile = () => {
