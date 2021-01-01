@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllJobs } from '../../Redux/JobsRedux/actions'
 import JobListingNavbar from './JobListingNavbar'
-import PinnedSubheaderList from './List'
+import JobSearch from './JobSearch'
+import JobListingContent from './List'
 
 const JobListing = () => {
     const [value, setValue] = useState("")
@@ -11,6 +12,10 @@ const JobListing = () => {
 
     const dispatch = useDispatch()
 
+    const handleSubmit = () => {
+        dispatch(fetchAllJobs(value))
+    }
+
     useEffect(() => {
         dispatch(fetchAllJobs(value))
     }, [dispatch])
@@ -18,8 +23,8 @@ const JobListing = () => {
     return (
         <div>
             <JobListingNavbar/>
-            <PinnedSubheaderList data={jobs}/>
-
+            <JobSearch value={value} setValue={setValue} handleSubmit={handleSubmit}/>
+            <JobListingContent data={jobs}/>
         </div>
     )
 }
