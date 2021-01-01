@@ -52,7 +52,8 @@ const RecruiterSignUp = () => {
             dispatch(addRecruiter(formData)) 
             dispatch(fetchRecruiters())
             alert("Registration Succesful")
-            const location = { pathname: '/recruiter', state: {formData} } 
+            setValue(init)
+            const location = { pathname: '/recruiter-profile', state: {formData} } 
             history.push(location) 
         }
       };

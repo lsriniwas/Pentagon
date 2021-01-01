@@ -59,11 +59,38 @@
       "job_type": "",
       "shift_type": "I am not interested in a Shift Based Job",
       "salary": 100000
+    },
+    {
+      "id": 2,
+      "name": "Sri",
+      "contact": 100000000,
+      "email": "xyz@gmail.com",
+      "password": "123",
+      "gender": "male",
+      "qualification": "",
+      "institute_name": "",
+      "year_0f_completion": 2019,
+      "course_type": "full-time",
+      "skills": "",
+      "resume": "",
+      "preferences": [],
+      "location": "banglore",
+      "dob": "02/02/1000",
+      "profile_title": "",
+      "profile_summary": "",
+      "experience": "2yrs",
+      "desired_job": "",
+      "job_role": "",
+      "job_location": "",
+      "department": "",
+      "industry": "",
+      "job_type": "",
+      "shift_type": "I am not interested in a Shift Based Job",
+      "salary": 100000
     }
   ],
   "jobs": [
     {
-      "id": 1,
       "recruiter_id": 1,
       "jobtitle": "Java Developer",
       "company": "XYZ Corp.,",
@@ -71,7 +98,37 @@
       "state": "TX",
       "date": "Mon, 02 Aug 2017 16:21:00 GMT",
       "snippet": "looking for an object-oriented Java Developer.Java Servlets,HTML, JavaScript, AJAX, Struts, Struts2, JSF desirable. Familiarity with Tomcat and the Java...",
-      "applied": []
+      "applied": [
+        1
+      ],
+      "id": 1
+    },
+    {
+      "recruiter_id": 1,
+      "jobtitle": "Java Developer",
+      "company": "XYZ Corp.,",
+      "city": "Austin",
+      "state": "TX",
+      "date": "Mon, 02 Aug 2017 16:21:00 GMT",
+      "snippet": "looking for an object-oriented Java Developer.Java Servlets,HTML, JavaScript, AJAX, Struts, Struts2, JSF desirable. Familiarity with Tomcat and the Java...",
+      "applied": [
+        2
+      ],
+      "id": 2
+    },
+    {
+      "recruiter_id": 2,
+      "jobtitle": "Java Developer",
+      "company": "XYZ Corp.,",
+      "city": "Austin",
+      "state": "TX",
+      "date": "Mon, 02 Aug 2017 16:21:00 GMT",
+      "snippet": "looking for an object-oriented Java Developer.Java Servlets,HTML, JavaScript, AJAX, Struts, Struts2, JSF desirable. Familiarity with Tomcat and the Java...",
+      "applied": [
+        1,
+        2
+      ],
+      "id": 3
     }
   ]
 }
