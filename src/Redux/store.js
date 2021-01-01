@@ -1,5 +1,13 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux"
 import { authReducer } from "./reducer"
+import { jobsReducer } from "./jobs/reducer"
+
+const rootReducer = combineReducers(
+    {
+        app: jobsReducer,
+        auth: authReducer
+    }
+)
 
 const thunk = ({ getState, dispatch }) => (next)=>(action)=>{
     if (typeof action === 'function') {
@@ -13,7 +21,7 @@ const createComposer =window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 
 export const store = createStore(
-    authReducer,
+    rootReducer,
     createComposer(applyMiddleware(thunk))
 )
 

@@ -18,12 +18,7 @@ const LandingPageContent = () => {
     const isAuth = useSelector((state) => state.isAuth)
     const dispatch = useDispatch()
 
-    const showModal = () => {
-        setOpen(true);
-    };
-
-
-    const handleCancel = () => {
+   const handleCancel = () => {
         setOpen(false);
     };
 
@@ -57,7 +52,6 @@ const LandingPageContent = () => {
     const [open, setOpen] = React.useState(false);
     return (
         <div>
-            {isAuth ? "LOGGED IN" : "LOGGED OUT"}
             {isAuth ? <Redirect to="/dashboard" /> : ""}
             <section className={styles.home_mid}>
                 <div className={styles.content}>
