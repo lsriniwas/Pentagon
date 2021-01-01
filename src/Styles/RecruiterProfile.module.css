@@ -8,7 +8,7 @@ div{
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    margin-top: 30px;
+   padding-top: 30px;
 
 }
 .profileContainerMain{
@@ -16,6 +16,7 @@ div{
     width: 70%;
     margin-right: 10px;
     padding: 10px;
+    background:white;
 }
 .advertisement{
     height: 550px;
@@ -75,8 +76,11 @@ div{
 }
 
 .selectOption{
-    border: 1px solid #e7e7e7;;
+    margin-bottom: 15px;
     margin-top: 10px;
+    color: #fff;
+    border: none;
+    outline: rgb(129, 129, 253);
 }
 
 .formData{
@@ -99,3 +103,4 @@ div{
     display: flex;
     justify-content: space-between;
 }
+

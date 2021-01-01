@@ -10,9 +10,15 @@ import { ProfileContainer } from './ProfileContainer'
 
 
 const useStyles = makeStyles(() => ({
+   main:{
+    background: 'linear-gradient(to right,#e7d6d3 0%,#dadced 49%,#d9dcf0 99%)',
+    minHeight:'100vh'
+   },
     root:{
         padding:"10px 10px 0px 10px",
-        zIndex:800
+        zIndex:800,
+       background: 'linear-gradient(135deg,#5a3ea5 0%,#4b30bd 50%,#4b30bd 100%)'
+
     },
     navLink: {
         fontFamily: `Roboto,Arial`,
@@ -31,7 +37,7 @@ const RecruiterProfile = () => {
         dispatch(logoutRecruiter())
     }
     return (
-        <div>
+        <div className={classes.main}>
              <AppBar className={classes.root} position="relative">
                 <Box display="flex" justifyContent="space-between" >
                 <div className={styles.left_band}>
@@ -42,7 +48,7 @@ const RecruiterProfile = () => {
                             <NavLink className={classes.navLink} to="/">Home</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="about-us">About us</NavLink>
+                            <NavLink className={classes.navLink} to="/">About us</NavLink>
                         </Grid>   
                     </div>
                     <div className={styles.right_band}>

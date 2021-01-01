@@ -1,7 +1,7 @@
 import React from "react"
 import { AppBar, Backdrop, Box, Fade, Grid, Modal } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import styles from "./Recruiter.module.css"
 import { Form } from "./Form";
 import { RecruiterSignUp } from "./RecruiterSignUp";
@@ -53,7 +53,8 @@ const Recruiter = () => {
     const [open, setOpen] = React.useState(false);
     const list=useSelector(state=>state.recruiter.recruiterList)
     const dispatch=useDispatch()
-
+    const recruiterIsAuth=useSelector(state=>state.recruiter.recruiterIsAuth)
+    const history=useHistory()
     React.useEffect(() => {
         dispatch(fetchRecruiters())
     }, [dispatch])
@@ -64,6 +65,9 @@ const Recruiter = () => {
     const handleClose = () => {
         setOpen(false);
     };
+    const handleDashboard=()=>{
+        history.replace("/recruiter-profile")
+    }
     return (
         <div>
             <AppBar className={classes.root} position="relative">
@@ -73,19 +77,19 @@ const Recruiter = () => {
                             <img src={process.env.PUBLIC_URL + '/navbarImg.png'} alt="logo" />
                         </a>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="/home">Home</NavLink>
+                            <NavLink className={classes.navLink} to="/">Home</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="about-us">About us</NavLink>
+                            <NavLink className={classes.navLink} to="/">About us</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="hiring-plans">Hiring Plans</NavLink>
+                            <NavLink className={classes.navLink} to="/">Hiring Plans</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="job-seeker">Job Seeker?</NavLink>
+                            <NavLink className={classes.navLink} to="/">Job Seeker?</NavLink>
                         </Grid>
                         <Grid style={{ margin: 10 }}>
-                            <NavLink className={classes.navLink} to="hr-insider">HR Insider</NavLink>
+                            <NavLink className={classes.navLink} to="/">HR Insider</NavLink>
                         </Grid>
                     </div>
                     <div className={styles.right_band}>
@@ -96,9 +100,16 @@ const Recruiter = () => {
                             </ul>
                         </div>
                         <div>
-                            <button className={styles.recruiterLogin_button} onClick={handleOpen} >
-                                Recruiter login
+                       { 
+                        !recruiterIsAuth ?
+                        <button className={styles.recruiterLogin_button} onClick={handleOpen} >
+                                    Recruiter login
                         </button>
+                        :
+                        <button className={styles.recruiterLogin_button} onClick={handleDashboard}>
+                            Dashboard
+                        </button>
+                       }
                             <Modal
                                 className={classes.modal}
                                 open={open}
@@ -189,14 +200,16 @@ const Recruiter = () => {
                     <Footer />
                 </>
                 {/* Recruiter SignUP */}
-                <div className={styles.recruitersignupform}>
+               {
+               !recruiterIsAuth &&
+               <div className={styles.recruitersignupform}>
                     <div>
                         <h2>Request free demo</h2>
                     </div>
                     <div>
                         <RecruiterSignUp />
                     </div>
-                </div>
+                </div>}
                 {/* //Recruiter SignUP */}
             </div>
            {/* //Body-Content */}
