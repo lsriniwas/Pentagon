@@ -27,9 +27,9 @@ const Register6 =props=>{
     
     const handleNext=(type)=>{
         const payload={
-            Institute_name:name,
-            Year_Graduation:degreeYear,
-            Course_type:type
+            institute_name:name,
+            year_graduation:degreeYear,
+            course_type:type
 
         }
         console.log(payload)
