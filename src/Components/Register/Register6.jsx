@@ -37,7 +37,7 @@ const Register6 =props=>{
     }
 
         return (
-            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px"}}>
+            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px",textAlign:"center"}}>
                 <h1>From which institute did you complete {props.name}</h1>
                  <TextField id="outlined-basic" label="Institute Name" variant="outlined" onChange={(e)=>{setName(e.target.value)}}/><br/>
                  <TextField id="outlined-basic" label="Year of Completion" variant="outlined" onChange={(e)=>{setDegreeYear(e.target.value)}}/><br/> 
@@ -48,7 +48,7 @@ const Register6 =props=>{
                 <Paper onClick={()=>handleNext("Part Time")} variant="outlined" square >Part Time</Paper>
                 <Paper onClick={()=>handleNext("Correspondence")} variant="outlined" square >Correspondence</Paper>                
                 </div>
-                 <div style={{display:"flex", justifyContent:"space-between"}}>
+                 <div style={{display:"flex", justifyContent:"space-between",position:"fixed", top:700}}>
                 <button onClick={()=>props.handleback()}>BACK</button>
                 
                 </div>

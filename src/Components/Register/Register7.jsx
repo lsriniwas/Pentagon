@@ -35,21 +35,21 @@ const Register7 =props=>{
     }
 
         return (
-            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px"}}>
+            <div style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px",textAlign:"center"}}>
                 <h1>Tell us about your Skills</h1>
                 <h3>Add 6 or more skills to get 3X more recruiter views</h3>
                  <TextField id="outlined-basic" label="Enter Skill Name" variant="outlined" onChange={(e)=>setSkill(e.target.value)}/><br/>
-                 <button onClick={()=>setSkills([...skills,skill])}>Add Skill</button>
+                 <button style={{marginTop:"10px",backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={()=>setSkills([...skills,skill])}>Add Skill</button>
                  <div className={classes.root} >
                      {
                         skills.length>0 && skills.map((item)=>(
-                            <Paper  variant="outlined" square >{item}</Paper>
+                            <Paper style={{borderRadius:"5px"}} variant="outlined" square >{item}</Paper>
                          ))
                      }            
                 </div>
-                 <div style={{display:"flex", justifyContent:"space-between"}}>
-                <button onClick={()=>props.handleback()}>BACK</button>
-                 <button onClick={handleNext}>Next</button>
+                 <div style={{display:"flex", justifyContent:"space-between",position:"fixed", top:500}}>
+                 <button style={{marginTop:"200px", marginLeft:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}}>Previous</button>
+                 <button style={{marginTop:"200px", marginRight:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={handleNext}>Next</button>
                 
                 
                 </div>

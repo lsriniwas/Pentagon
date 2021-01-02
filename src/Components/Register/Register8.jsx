@@ -34,7 +34,7 @@ const Register8 = props => {
     }
 
     return (
-        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, margin:"auto",marginTop:"50px" }}>
+        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, margin:"auto",marginTop:"50px",textAlign:"center" }}>
             <h1>Browse & upload resume</h1>
             <h3>Upload your updated resume and you are done!</h3>
             <Upload {...props}>
@@ -44,10 +44,10 @@ const Register8 = props => {
             <h5>OR</h5>
             <h4>Forward your Resume to myresume@shine.com</h4>
            
-            <div style={{display:"flex", justifyContent:"space-between"}}>
-                <button onClick={()=>props.handleback()}>BACK</button>
-                 {submitted==false && <button onClick={handleNext}>SKIP</button>}
-                 {submitted==true && <button onClick={handleNext}>Next</button>}
+            <div style={{display:"flex", justifyContent:"space-between",position:"fixed", top:500,height:"50px"}}>
+                <button onClick={()=>props.handleback()} style={{marginTop:"200px", marginLeft:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}}>Previous</button>
+                 {submitted==false && <button style={{marginTop:"200px", marginRight:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={handleNext}>SKIP</button>}
+                 {submitted==true && <button style={{marginTop:"200px", marginRight:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={handleNext}>Next</button>}
                 
                 
                 </div>

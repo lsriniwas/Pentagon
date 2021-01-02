@@ -30,7 +30,7 @@ const Register5 =props=>{
     }
 
   return (
-            <div  style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px"}}>
+            <div  style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px",textAlign:"center"}}>
                 <h1>Let us know your highest educational qualification</h1>
                 <div className={classes.root} >
                 <Paper onClick={()=>handleNext("M.C.A")} variant="outlined" square >M.C.A</Paper>
