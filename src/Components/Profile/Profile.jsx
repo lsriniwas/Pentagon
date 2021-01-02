@@ -9,6 +9,7 @@ import { useSelector } from "react-redux"
 
 
 
+
 const Profile = () => {
     const data = useSelector((state) => state.auth.userdata)
     const experience=data && data.experience.split(" ")
@@ -74,6 +75,7 @@ const Profile = () => {
                                         <strong >Name</strong>
                                     </div>
                                     <div>
+
                                         <span>{data && data.name}</span>
                                     </div>
                                 </li>
@@ -82,6 +84,7 @@ const Profile = () => {
                                         <strong >Email</strong>
                                     </div>
                                     <div>
+
                                         <span>{data && data.email}</span>
                                     </div>
                                 </li>
@@ -90,6 +93,7 @@ const Profile = () => {
                                         <strong >Mobile</strong>
                                     </div>
                                     <div>
+
                                         <span>+91-{data && data.contact}</span>
                                     </div>
                                 </li>
@@ -106,6 +110,7 @@ const Profile = () => {
                                         <strong >Location</strong>
                                     </div>
                                     <div>
+
                                         <span>{data && data.city}</span>
                                     </div>
                                 </li>
@@ -114,6 +119,7 @@ const Profile = () => {
                                         <strong >Gender</strong>
                                     </div>
                                     <div>
+
                                         <span>{data && data.gender}</span>
                                     </div>
                                 </li>
@@ -145,7 +151,8 @@ const Profile = () => {
                                 </li>
                                 <li>
                                     <div className={styles.strong_lable}>
-                                        <strong >Experience</strong>
+
+                                        <strong >Total Experience</strong>
                                     </div>
                                     <div>
                                         <span>{`${experience[0]}Years & ${experience[1]}Months `}</span>
@@ -165,6 +172,7 @@ const Profile = () => {
                         <br/>
                         <div className={styles.education_init_name}>
                             <div>
+
                             {data && data.education}
                             </div>
                             <div>
@@ -181,6 +189,7 @@ const Profile = () => {
                             <h1>Skills</h1>
                         </div>
                         {
+
                             data&& data.skills.map(item =>
                                 <>
                                 <div className={styles.indivi}>
@@ -261,6 +270,7 @@ const Profile = () => {
                                         <strong >Salary</strong>
                                     </div>
                                     <div>
+
                                         <span>{`₹ ${salary[0]}Lakh ${salary[1]}Thousand `}</span>
                                     </div>
                                 </li>
@@ -278,4 +288,5 @@ const Profile = () => {
         </div>
     )
 }
+
 export {Profile}
