@@ -21,7 +21,7 @@ const Routes = () => {
                 <PrivateRoute path="/recruiter-profile"><RecruiterProfile /> </PrivateRoute>
                 <PrivateRoute path="/dashboard"> <Dashboard /></PrivateRoute>
                 <PrivateRoute path="/user-profile"> <Profile /></PrivateRoute>
-                <Route path="/listings"><JobListing /></Route>
+                <PrivateRoute path="/listings"><JobListing /></PrivateRoute>
 
             </Switch>
         </div>
