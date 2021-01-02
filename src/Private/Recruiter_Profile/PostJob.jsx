@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
         width:"400px",
         padding: '0 30px',
         outline:"none"
+        
     }
 
   }));
@@ -57,14 +58,14 @@ const PostJob = ({Id}) => {
         <div className={styles.formData}>
             <form className={classes.root} >
                 <div className={styles.formInput}>
-                    <TextField id="outlined-basic" variant="outlined" label="Job Title" value={value.jobtitle}
+                    <TextField size='small' id="outlined-basic" variant="outlined" label="Job Title" value={value.jobtitle}
                         type="text"
                         name="jobtitle"
                         onChange={e => setValue({ [e.target.name]: e.target.value })}
                     />
                 </div>
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         label="Company"
                         value={value.company}
@@ -74,7 +75,7 @@ const PostJob = ({Id}) => {
                     />
                 </div>
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         label="City"
                         value={value.city}
@@ -84,7 +85,7 @@ const PostJob = ({Id}) => {
                     />
                 </div>
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         label="salary"
                         value={value.salary}
@@ -94,7 +95,7 @@ const PostJob = ({Id}) => {
                     />
                 </div>
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         label="Experience needed
                     " value={value.experience}
@@ -104,7 +105,7 @@ const PostJob = ({Id}) => {
                     />
                 </div>
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         label="Qualifications"
                         value={value.qualification_required}
@@ -114,7 +115,7 @@ const PostJob = ({Id}) => {
                     />
                 </div>
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         label="Skills"
                         value={value.skills}
@@ -124,7 +125,7 @@ const PostJob = ({Id}) => {
                     />
                 </div>
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         label="Industry"
                         value={value.industry}
@@ -133,7 +134,7 @@ const PostJob = ({Id}) => {
                         onChange={e => setValue({ [e.target.name]: e.target.value })}
                     />
                 <div className={styles.formInput}>
-                    <TextField
+                    <TextField size='small'
                         variant="outlined"
                         id="standard-multiline-flexible"
                         label="Job Description"

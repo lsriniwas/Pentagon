@@ -49,9 +49,8 @@ const Register6 =props=>{
                 <Paper onClick={()=>handleNext("Correspondence")} variant="outlined" square >Correspondence</Paper>                
                 </div>
                  <div style={{display:"flex", justifyContent:"space-between",position:"fixed", top:700}}>
-                <button style={{marginLeft:"50px"}} onClick={()=>props.handleback()}>BACK</button>
-                
-                </div>
+                <button style={{marginLeft:"50px", backgroundColor: "white", padding: "5px", borderRadius: "5px", border: "1px solid gray"}} onClick={()=>props.handleback()}>BACK</button>
+           </div>
                  
             </div>
         )

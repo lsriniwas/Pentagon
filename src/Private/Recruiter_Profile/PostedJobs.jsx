@@ -63,10 +63,10 @@ export const PostedJobs = ({ presentUser }) => {
                                             </ul>
                                             <p> {item.date} </p>
                                             {
-                                                item.applied?.map(item => 
+                                                item.applied?.map((item,i) => 
                                                     <Button
                                                     variant="contained" color="primary"
-                                                    key={item}
+                                                    key={i}
                                                     style={{margin:10}}
                                                     onClick={()=>handleOpen(item)}>Applicant Id:{item}</Button>)
                                             }

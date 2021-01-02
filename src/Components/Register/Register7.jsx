@@ -47,11 +47,13 @@ const Register7 =props=>{
                          ))
                      }            
                 </div>
-                 <div style={{display:"flex", justifyContent:"space-between",position:"fixed", top:500}}>
+                 <div style={{display:"flex", width:'100%', justifyContent:"space-between", top:500}}>
+                     <div>
                  <button style={{marginTop:"200px", marginLeft:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}}>Previous</button>
+                     </div>
+                     <div>
                  <button style={{marginTop:"200px", marginRight:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={handleNext}>Next</button>
-                
-                
+                     </div>
                 </div>
                  
             </div>

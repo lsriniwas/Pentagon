@@ -15,9 +15,10 @@ const useStyles = makeStyles(() => ({
     minHeight:'100vh'
    },
     root:{
-        padding:"10px 10px 0px 10px",
+        padding:"10px 0px 0px 0px",
         zIndex:800,
-       background: 'linear-gradient(135deg,#5a3ea5 0%,#4b30bd 50%,#4b30bd 100%)'
+        height:'60px',
+        background: 'linear-gradient(135deg,#5a3ea5 0%,#4b30bd 50%,#4b30bd 100%)'
 
     },
     navLink: {
@@ -40,7 +41,7 @@ const RecruiterProfile = () => {
         <div className={classes.main}>
              <AppBar className={classes.root} position="relative">
                 <Box display="flex" justifyContent="space-between" >
-                <div className={styles.left_band}>
+                <div className={styles.left_band} style={{padding:0}}>
                         <a href="/" >
                             <img src={process.env.PUBLIC_URL + '/navbarImg.png'} alt="logo" />
                         </a>
@@ -55,7 +56,7 @@ const RecruiterProfile = () => {
                         <div>
                             <ul>
                                 <li>080-47105555</li>
-                                <li>recruiterservices@shine.com</li>
+                                <li style={{marginTop:'-10px'}}>recruiterservices@shine.com</li>
                             </ul>
                         </div>
                         <div>

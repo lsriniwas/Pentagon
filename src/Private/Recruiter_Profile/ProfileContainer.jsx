@@ -45,12 +45,11 @@ const ProfileContainer = () => {
                 </div>
                 <div className={styles.mainContent}>
                     <div className={styles.mainContentHeader}>
-                       
                         <button  onClick={e=>{
                             setPostJob(false)
                             setAllPostedJobs(true)
                         }}
-                        style={{background:"#4C31BE",outline:"none",border:'none'}}
+                        style={{cursor:'pointer',background:'linear-gradient(135deg,#ac94ee 0%,#4b30bd 50%,#4b30bd 100%)',outline:"none",border:'none'}}
                         className={styles.selectOption}
                         >
                         JOBS POSTED
@@ -59,7 +58,7 @@ const ProfileContainer = () => {
                             setPostJob(true)
                             setAllPostedJobs(false)
                         }}
-                        style={{background:"#4C31BE",outline:"none",border:'none'}}
+                        style={{cursor:'pointer',background:'linear-gradient(135deg,#ac94ee 0%,#4b30bd 50%,#4b30bd 100%)',outline:"none",border:'none'}}
                         className={styles.selectOption}
                         >
                             POST JOB

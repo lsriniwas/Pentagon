@@ -27,7 +27,6 @@ const Register2 =(props)=>{
         console.log(payload)
         props.handleSubmit(payload)
     }
-
   return (
             <div  style={{height:"500px", width:"782px", backgroundImage:`url('back1.jpg')`, margin:"auto",marginTop:"50px", textAlign:"center"}}>
                 <h1>Welcome {props.name}</h1>
@@ -42,6 +41,4 @@ const Register2 =(props)=>{
             </div>
         )
     }
-
-
     export { Register2 }

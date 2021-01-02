@@ -66,7 +66,7 @@ const Register =()=>{
                 <RegProgress
                 stage={step}                
                 />
-                <div>{stage}</div>
+               
                 {
                     stage==1 && 
                     <Register1
