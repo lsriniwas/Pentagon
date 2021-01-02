@@ -52,10 +52,10 @@ const LandingPageHeader = () => {
         {isAuth ? <Redirect to="/dashboard" /> : ""}
             <div className={styles.content}>
                 <div className={styles.box_one}>
-                    <h1>Growth on your mind?</h1>
-                    <h2>Explore 300,000+ jobs</h2>
+                    <h1 style={{color:"white"}}>Growth on your mind?</h1>
+                    <h2 style={{color:"white"}}>Explore 300,000+ jobs</h2>
                     <div className={styles.white_box}>
-                        <p>Job title, skills</p>
+                        <p style={{marginTop:"12px"}}>Job title, skills</p>
                         <SearchIcon color="primary"/>
                     </div>
                 </div>

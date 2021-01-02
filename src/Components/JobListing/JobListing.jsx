@@ -8,6 +8,8 @@ import JobListingContent from './List'
 const JobListing = () => {
     const [value, setValue] = useState("")
     const jobs = useSelector(state => state.job.jobs)
+    const data = useSelector((state) => state.auth.userdata)
+    jobs.sort((a,b)=>b.id-a.id)
     console.log(jobs)
 
     const dispatch = useDispatch()
@@ -22,7 +24,8 @@ const JobListing = () => {
 
     return (
         <div>
-            <JobListingNavbar/>
+            <JobListingNavbar
+            name={data.name}/>
             <JobSearch value={value} setValue={setValue} handleSubmit={handleSubmit}/>
             <JobListingContent data={jobs}/>
         </div>
