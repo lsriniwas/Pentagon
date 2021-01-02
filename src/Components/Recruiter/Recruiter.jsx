@@ -93,11 +93,11 @@ const Recruiter = () => {
                         </Grid>
                     </div>
                     <div className={styles.right_band}>
-                        <div>
-                            <ul>
-                                <li>080-47105555</li>
-                                <li>recruiterservices@shine.com</li>
-                            </ul>
+                        <div >
+                            
+                                <p>080-47105555</p>
+                                <p style={{marginTop:"-12px"}}>recruiterservices@shine.com</p>
+                          
                         </div>
                         <div>
                        { 
@@ -140,7 +140,7 @@ const Recruiter = () => {
             <div className={classes.bodyContent}>
                 <div className={classes.backgroundImage}>
                     <div className={styles.topCompanies}>
-                        <h1>
+                        <h1 style={{color:"white"}}>
                             Hire the Right Talent,
                             with Right Skills
                         </h1>
