@@ -16,7 +16,7 @@ import LandingPageHeader from './LandingPageHeader';
 const LandingPageContent = () => {
     return (
         <div>
-            <LandingPageHeader/> {/* User Register and Sign in buttons inside LandingPageHeader */}
+            <LandingPageHeader/>
             <CoolWorkPlaces/>
             <TopCompaniesHiring/>
             <WhyShine/>
