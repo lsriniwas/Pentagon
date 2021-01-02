@@ -13,6 +13,9 @@ import { Profile } from '../Components/Profile/Profile'
 const Routes = () => {
     return (
         <div>
+            <Route path="/profile">
+                <Profile/>
+            </Route>
             <Switch>
                 <Route path="/" exact><LandingPage /></Route>
                 <Route path="/login" render={() => <Login2 />} />

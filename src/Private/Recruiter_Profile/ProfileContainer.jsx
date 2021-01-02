@@ -47,22 +47,28 @@ const ProfileContainer = () => {
                     <div className={styles.mainContentHeader}>
                        
                         <button  onClick={e=>{
+                            setPostJob(false)
+                            setAllPostedJobs(true)
+                        }}
+                        style={{background:"#4C31BE",outline:"none",border:'none'}}
+                        className={styles.selectOption}
+                        >
+                        JOBS POSTED
+                        </button>
+                        <button  onClick={e=>{
                             setPostJob(true)
                             setAllPostedJobs(false)
-                        }}>
+                        }}
+                        style={{background:"#4C31BE",outline:"none",border:'none'}}
+                        className={styles.selectOption}
+                        >
                             POST JOB
                         </button>
                         
-                        <button  onClick={e=>{
-                            setPostJob(false)
-                            setAllPostedJobs(true)
-                        }}>
-                        JOBS POSTED
-                        </button>
                        
                     </div>
 
-                     <div className={styles.selectOption}>
+                     <div >
                         { postJob&&
                             <PostJob Id={Data.id}/>
                         }
