@@ -8,7 +8,7 @@ div{
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    margin-top: 30px;
+   padding-top: 30px;
 
 }
 .profileContainerMain{
@@ -16,6 +16,7 @@ div{
     width: 70%;
     margin-right: 10px;
     padding: 10px;
+    background:white;
 }
 .advertisement{
     height: 550px;
@@ -43,7 +44,6 @@ div{
     background-color: rgb(248, 248, 248);
     padding: 5px;
 }
-
 .spanDetails{
     min-width: 150px !important;
     color:rgb(255, 181, 181)
@@ -53,8 +53,7 @@ div{
     border-radius: 5px;
     width: 250px;
     height: 250px;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;  
 }
 .advertisementfirst img,.advertisementsecond img{
     width:250px;
@@ -73,12 +72,13 @@ div{
     text-align: center;
     background-color: white;
 }
-
 .selectOption{
-    border: 1px solid #e7e7e7;;
+    margin-bottom: 15px;
     margin-top: 10px;
+    color: #fff;
+    border: none;
+    outline: rgb(129, 129, 253);
 }
-
 .formData{
     padding:10px;
 }
@@ -99,3 +99,4 @@ div{
     display: flex;
     justify-content: space-between;
 }
+

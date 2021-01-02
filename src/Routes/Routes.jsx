@@ -8,10 +8,14 @@ import  Dashboard  from "../Components/Dashboard/Dashboard"
 import {Login2} from "../Components/Login/login2"
 import Register from "../Components/Register/Register"
 import JobListing from '../Components/JobListing/JobListing'
+import { Profile } from '../Components/Profile/Profile'
 
 const Routes = () => {
     return (
         <div>
+            <Route path="/profile">
+                <Profile/>
+            </Route>
             <Switch>
                 <Route path="/" exact><LandingPage /></Route>
                 <Route path="/login" render={() => <Login2 />} />
@@ -19,7 +23,8 @@ const Routes = () => {
                 <Route path="/recruiter" exact><Recruiter /></Route>
                 <PrivateRoute path="/recruiter-profile"><RecruiterProfile /> </PrivateRoute>
                 <PrivateRoute path="/dashboard"> <Dashboard /></PrivateRoute>
-                <PrivateRoute path="/listings"><JobListing /></PrivateRoute>
+                <PrivateRoute path="/user-profile"> <Profile /></PrivateRoute>
+                <Route path="/listings"><JobListing /></Route>
 
             </Switch>
         </div>
