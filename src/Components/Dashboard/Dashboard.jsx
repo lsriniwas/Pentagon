@@ -13,11 +13,7 @@ import { fetchAllJobs } from '../../Redux/JobsRedux/actions'
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-
-
 const Dashboard = () => {
-
     const data = useSelector((state) => state.auth.userdata)
     const allJobs = useSelector(state => state.job.jobs)
     const [itemList, setList] = useState([])
@@ -27,21 +23,17 @@ const Dashboard = () => {
     const isAuth = useSelector((state) => state.auth.isAuth)
     const [text, setText] = React.useState(`There are no jobs matching your profile. Please keep your Profile updated.`)
     const { TabPane } = Tabs;
-
     React.useEffect(() => {
         dispatch(fetchAllJobs())
         let data = []
         if (jobs_applied.length !== 0) {
             for (let i = 0; i < jobs_applied.length; i++) {
-
                 data.push(allJobs.find(item => item.id == jobs_applied[i]))
-
             }
         }
         setList(data)
         console.log(itemList)
-    }, [dispatch])
-
+    }, [dispatch,key])
     function callback(key) {
         console.log(key)
         if (key == 1) {
@@ -63,13 +55,9 @@ const Dashboard = () => {
             <DashNav
                 name={data.name}
             />
-
             <div style={{ marginTop: "65px", width: "100%", backgroundColor: "#F4F5F5", height: "90px" }}>
                 <SearchBar></SearchBar>
             </div>
-
-
-
             <div style={{ display: "flex", width: "1100px", height: "520px", margin: "auto", textAlign: "center", justifyContent: "space-between", marginTop: "50px", fontSize: "larger", backgroundColor: "#FBFBFB" }}>
                 <div>
                     <Card style={{ width: "700px" }} type="inner" title="Jobs for You" extra={<a href="#">More</a>}>
@@ -104,30 +92,29 @@ const Dashboard = () => {
                             <>
                                 <h1>Jobs Applied</h1>
                                 {
-                                    itemList.map(item =>
-                                        <Accordion key={item.id} style={{ margin: 3, padding: 10, outline: 'none', }} elevation={5}>
+                                    itemList?.map(item =>
+                                        <Accordion key={item && item.id} style={{ margin: 3, padding: 10, outline: 'none', }} elevation={5}>
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                     >
-                                        <h3> {item.jobtitle}</h3>
+                                        <h3> {item && item.jobtitle}</h3>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
                                             <div>
-                                            <p > {item.company}</p>
+                                            <p > {item && item.company}</p>
                                             </div>
                                             <ul>
-                                                <li style={{ listStyle: "none" }}> {item.experience} </li>
-                                                <li style={{ listStyle: "none" }}> {item.city} </li>
+                                                <li style={{ listStyle: "none" }}> {item &&  item.experience} </li>
+                                                <li style={{ listStyle: "none" }}> {item &&  item.city} </li>
                                             </ul>
-                                            <p> {item.date} </p>
+                                            <p> {item && item.date} </p>
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
                                     )
                                 }
                             </>
-
                         }
                     </Card>
                 </div>
@@ -140,13 +127,11 @@ const Dashboard = () => {
                                     {data.name[0].toUpperCase()}
                                    </div>
                                 </div>
-
                                 <div style={{ marginLeft: "20px" }} >
                                     <h2>{data && data.name}</h2>
                                     <div style={{ marginTop: "-15px" }}>
                                         Profile title Not mentioned
                                     </div ></div>
-
                             </div>
                             <div style={{ marginTop: "10px" }}>
                                 <div style={{ display: "flex", justifyContent: "space-between" }} >
@@ -180,12 +165,13 @@ const Dashboard = () => {
                         <div></div>
                         <div></div>
                     </Card></div>
-
-
             </div>
-            <LandingPageFooter />
+            <div style={{marginTop:"20px"}}>
+            <LandingPageFooter  />
+            </div>
         </div>
     )
 }
+
 
 export default Dashboard

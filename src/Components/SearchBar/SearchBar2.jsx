@@ -5,12 +5,13 @@ import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import db from "../../Utils/db"
+
 import db4 from "../../Utils/db4"
 import {useDispatch} from "react-redux"
 import { useSelector } from "react-redux"
 import { searchReq } from "../../Redux/JobsRedux/actions"
 import { useHistory } from "react-router-dom"
+import { fetchAllJobs } from '../../Redux/JobsRedux/actions'
 
 const SearchBarWrapper = styled.div`
 width:25%;
@@ -31,8 +32,9 @@ flex-direction:column;
 flex:0 0 auto;
 max-height:150px;
 overflow:auto;
-border-bottom-right-radius:20px;
-border-bottom-left-radius:20px;
+border-bottom-right-radius:5px;
+border-bottom-left-radius:5px;
+z-index:20000;
 border:1px solid black;
 background:#FFFFFF;
 
@@ -44,8 +46,8 @@ background:#FFFFFF;
 }
 
 & :nth-child(${({active})=>active}){
-    background:#00FFFF;
-    color:white;
+    background:#7D7D7D;
+    color:black;
     font-weight:bold;
 }
 `
@@ -59,20 +61,25 @@ function SearchBar2() {
     const [suggestion, setSuggestions] = useState([])
     const [suggestion2, setSuggestions2] = useState([])
     const history = useHistory()
-
-
+    const jobs = useSelector((state) => state.job.jobs)
+    console.log("jobs",jobs)
     const dispatch = useDispatch()
+
+
+    useEffect(() => {
+      dispatch(fetchAllJobs(" "))
+  }, [dispatch])   
     
 
     useEffect(()=>{
         if(query===""){
           setSuggestions([])
         }
-        else {
-          var out=db.filter((item)=>item.title.toLowerCase().indexOf(query)!==-1? true:false
+        else if(query.length>1){
+          var out=jobs.filter((item)=>item.jobtitle.toLowerCase().indexOf(query)!==-1? true:false
           
           )
-          .map((item)=>item.title)
+          .map((item)=>item.jobtitle)
           setSuggestions(out)
         
         
@@ -117,7 +124,7 @@ function SearchBar2() {
     return (
         <div style={{display:"flex", justifyContent:"space-evenly", backgroundColor:"white", width:"100%",height:"100%"}}>
             <div style={{width:"20%",marginTop:"75px"}}>
-            <TextField id="outlined-basic" label="Job Title,Skills" value={query} variant="outlined" onChange={(e)=>{setQuery(e.target.value)}} style={{width:"100%"}} />
+            <TextField id="outlined-basic" label="Job Title,Skills" value={query} variant="outlined" onChange={(e)=>{setQuery(e.target.value)}} style={{width:"100%"}} autoComplete="off" />
     {
         !loading && <SuggestionBox active={active} len={suggestion.length}>{suggestion.map((item,index)=>
             (<div 
@@ -127,7 +134,7 @@ function SearchBar2() {
     }
     </div>
     <div style={{width:"20%",marginTop:"75px"}}>
-    <TextField id="outlined-basic2" label="Location" variant="outlined" value={location} onChange={(e)=>{setLocation(e.target.value)}} style={{width:"100%"}} />
+    <TextField id="outlined-basic2" label="Location" variant="outlined" value={location} onChange={(e)=>{setLocation(e.target.value)}} style={{width:"100%"}} autoComplete="off" />
     {
         !loading && <SuggestionBox active={active} len={suggestion2.length}>{suggestion2.map((item,index)=>
             (<div 

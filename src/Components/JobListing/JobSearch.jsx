@@ -4,6 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const JobSearch = ({ value, setValue, handleSubmit }) => {
     return (
+        <div style={{display:"flex"}}>
         <div className={styles.search_wrapper}>
             <input 
                 type="text"
@@ -14,7 +15,9 @@ const JobSearch = ({ value, setValue, handleSubmit }) => {
                 />
             <span className={styles.search_icon} onClick={handleSubmit}>
                 <SearchIcon style={{ color : 'white' }} />
-            </span>
+            </span></div>
+
+            <div style={{marginLeft:"500px"}}>FILTER</div>
         </div>
     )
 }

@@ -38,8 +38,7 @@ function SearchBar() {
             height: "200px",
             width: "100%",
             backgroundColor: "white",
-            border: "2px solid #000",
-            marginTop: "100px"
+            marginTop: "65px"
 
         }
     }));
