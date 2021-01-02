@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_ALL_JOBS_FAILURE, FETCH_ALL_JOBS_REQUEST, FETCH_ALL_JOBS_SUCCESS,SEARCH_SUCCESS } from "./actionTypes";
+import { FETCH_ALL_JOBS_FAILURE, FETCH_ALL_JOBS_REQUEST, FETCH_ALL_JOBS_SUCCESS,SEARCH_SUCCESS ,INCOMING_APPLICATION} from "./actionTypes";
 
 const fetchAllJobsRequest = () => ({
     type: FETCH_ALL_JOBS_REQUEST
@@ -47,7 +47,20 @@ export const searchReq = (payload) => (dispatch) => {
     return axios(config).then((res)=>{
         console.log("result",res)
         dispatch(fetchAllJobsSuccess(res.data))
-    })
+    })        
+}
 
-        
+export const job_apply = (payload,id) => dispatch => {
+    const config = {
+        method: 'PATCH',
+        url: `https://pentagon-shine.herokuapp.com/jobs/${id}`,
+        data:payload
+    }
+    return axios(config)
+        .then((res) => {
+            console.log(res)
+            // dispatch(fetchAllJobsSuccess(res.data))
+        }).catch((err) => {
+            // dispatch(fetchAllJobsFailure(err))
+        });
 }

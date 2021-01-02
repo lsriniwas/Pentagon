@@ -23,7 +23,6 @@ li{
     margin-top:30px;
     width: 71%;
     margin-right: 30px;
-
 }
 .booster{
     box-shadow: 0 2px 4px 0 #e7edfc, 0 0 20px 0 rgba(0,0,0,0.2);
@@ -38,7 +37,6 @@ li{
     width:250px;
     color: #707070;
     margin-bottom:30px;
-   
 
 }
 .user_header{
@@ -81,13 +79,10 @@ li{
     font-family: Roboto,Arial,Times,serif;
     font-size: 34px;
 }
-
-
 .profile_score{
     display: flex;
     justify-content: space-between;
 }
-
 .last_updated{
     font-size: 11px;
 }
@@ -99,8 +94,6 @@ li{
     box-sizing: border-box;
     padding: 22px 1%;
 }
-
-
 .strong_lable{
     font-size: 13px;
     font-weight: 500;
@@ -134,7 +127,6 @@ li{
     padding-left: 7px;
    
 }
-
 .indivi{
     display:flex;
     justify-content: space-between;

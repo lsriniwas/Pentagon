@@ -23,6 +23,7 @@ const Routes = () => {
                 <Route path="/recruiter" exact><Recruiter /></Route>
                 <PrivateRoute path="/recruiter-profile"><RecruiterProfile /> </PrivateRoute>
                 <PrivateRoute path="/dashboard"> <Dashboard /></PrivateRoute>
+                <PrivateRoute path="/user-profile"> <Profile /></PrivateRoute>
                 <Route path="/listings"><JobListing /></Route>
 
             </Switch>

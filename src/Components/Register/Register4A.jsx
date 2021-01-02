@@ -24,11 +24,11 @@ const Register4A = props => {
     const handleSubmit=()=>{
         const payload={
             company:true,
-            Company_Name:company,
+            company_Name:company,
             designation:designation,
             from:selectedDate1,
             till:selectedDate2,
-            CTC:lakh+" "+thousand,            
+            salary:lakh+" "+thousand,            
         }
         props.handleSubmit(payload)
     }

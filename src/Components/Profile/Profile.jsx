@@ -3,40 +3,45 @@ import React from 'react'
 import { Footer } from '../Recruiter/Footer'
 import styles from "../../Styles/Profile.module.css"
 import "../../Styles/Profile.module.css"
+import DashNav from '../Dashboard/DashNav'
+import { SearchBar } from '../SearchBar/SearchBar'
+import { useSelector } from "react-redux"
+
+
+
+
 const Profile = () => {
-
-    const skill = ["Computer Science", "Algorithm", "Data Structure", "Javascript"]
-
+    const data = useSelector((state) => state.auth.userdata)
+    const experience=data && data.experience.split(" ")
+    const salary=data && data.salary.split(" ")    
+    
     return (
         <div>
-            <AppBar position='relative'>
-                HEllo
-                <br />
-                hello
-                <br />
-                HEllo
-            </AppBar>
-            <div style={{ height: '70px', border: '1px solid black' }}>
+            <DashNav
+                name={data.name}
+            />
 
+            <div style={{ marginTop: "65px", width: "100%", backgroundColor: "#F4F5F5", height: "90px" }}>
+                <SearchBar></SearchBar>
             </div>
             <div className={styles.profile_container}>
                 <div className={styles.inner_container}>
                     <div className={styles.user_header}>
                         <div className={styles.user_header_left}>
                             <div className={styles.first_letter}>
-                                L
+                            {data.name[0].toUpperCase()}
                             </div>
                         </div>
                         <div className={styles.user_header_middle}>
-                            <h2>Lanka Sriniwas</h2>
+                            <h2>{data && data.name}</h2>
                             <span>
-                                Profile title Not mentioned
+                                Enthusiastic Graduate looking for Jobs
                                     </span>
                             <br />
                             <br />
-                            <b>sriniwas@gmail.com</b>
+                            <b>{data && data.email}</b>
                             <br />
-                            <b>91-9876543210</b>
+                            <b>91-{data && data.contact}</b>
                             <span>
                                 Verify
                                         </span>
@@ -70,7 +75,8 @@ const Profile = () => {
                                         <strong >Name</strong>
                                     </div>
                                     <div>
-                                        <span>Sriniwas</span>
+
+                                        <span>{data && data.name}</span>
                                     </div>
                                 </li>
                                 <li>
@@ -78,7 +84,8 @@ const Profile = () => {
                                         <strong >Email</strong>
                                     </div>
                                     <div>
-                                        <span>sriniwas@gmail.com</span>
+
+                                        <span>{data && data.email}</span>
                                     </div>
                                 </li>
                                 <li>
@@ -86,7 +93,8 @@ const Profile = () => {
                                         <strong >Mobile</strong>
                                     </div>
                                     <div>
-                                        <span>+91-9876543210</span>
+
+                                        <span>+91-{data && data.contact}</span>
                                     </div>
                                 </li>
                                 <li>
@@ -94,7 +102,7 @@ const Profile = () => {
                                         <strong >Date of birth</strong>
                                     </div>
                                     <div>
-                                        <span>Not mentioned</span>
+                                        <span>{data && data.dob}</span>
                                     </div>
                                 </li>
                                 <li>
@@ -102,7 +110,8 @@ const Profile = () => {
                                         <strong >Location</strong>
                                     </div>
                                     <div>
-                                        <span>Bangalore</span>
+
+                                        <span>{data && data.city}</span>
                                     </div>
                                 </li>
                                 <li>
@@ -110,7 +119,8 @@ const Profile = () => {
                                         <strong >Gender</strong>
                                     </div>
                                     <div>
-                                        <span>Male</span>
+
+                                        <span>{data && data.gender}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -121,7 +131,6 @@ const Profile = () => {
                             <h1>Work Summary</h1>
                         </div>
                         <br/>
-
                         <div>
                             <ul>
                                 <li>
@@ -142,10 +151,11 @@ const Profile = () => {
                                 </li>
                                 <li>
                                     <div className={styles.strong_lable}>
+
                                         <strong >Total Experience</strong>
                                     </div>
                                     <div>
-                                        <span>0 Months</span>
+                                        <span>{`${experience[0]}Years & ${experience[1]}Months `}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -162,13 +172,14 @@ const Profile = () => {
                         <br/>
                         <div className={styles.education_init_name}>
                             <div>
-                                B.COM
+
+                            {data && data.education}
                             </div>
                             <div>
-                                Commerce
+                            {data && data.year_graduation}
                             </div>
                             <div>
-                                NHC  (Full Time) | 2019
+                            {`${data.institute_name} || ${data.course_type} `}
                             </div>
                         </div>
                     </div>
@@ -178,7 +189,8 @@ const Profile = () => {
                             <h1>Skills</h1>
                         </div>
                         {
-                            skill.map(item =>
+
+                            data&& data.skills.map(item =>
                                 <>
                                 <div className={styles.indivi}>
                                    <div>
@@ -258,7 +270,8 @@ const Profile = () => {
                                         <strong >Salary</strong>
                                     </div>
                                     <div>
-                                        <span>Rs 10 - 12 Lakh / Yr</span>
+
+                                        <span>{`₹ ${salary[0]}Lakh ${salary[1]}Thousand `}</span>
                                     </div>
                                 </li>
                             </ul>
