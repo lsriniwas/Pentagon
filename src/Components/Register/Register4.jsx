@@ -57,12 +57,12 @@ const Register4 = props => {
                     </div>
                 </div>
             }
-            <div style={{ display: "flex", justifyContent: "space-between" ,height:"30px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" ,height:"30px",position:"fixed", top:500  }}>
             <button style={{marginTop:"200px", marginLeft:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={()=>props.handleback()}>⇦ Previous</button>
                 {
                     submitted && <button style={{marginTop:"200px", marginLeft:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}}>NEXT</button>}
                 {
-                    experienced && <button style={{marginTop:"200px", marginLeft:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={() => handleNext("fresher")}>NEXT</button>}
+                    experienced && <button style={{marginTop:"200px", marginLeft:"570px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={() => handleNext("fresher")}>NEXT</button>}
             </div>
         </div>
     )

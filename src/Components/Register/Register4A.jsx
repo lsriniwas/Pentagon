@@ -92,7 +92,7 @@ const Register4A = props => {
             }
             <div style={{ display: "flex", justifyContent: "space-between",position:"fixed", top:500 }}>
                 <div style={{display:"hidden"}}></div>
-                 <button style={{marginTop:"200px", marginRight:"30px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={()=>{handleSubmit()}}>NEXT</button>
+                 <button style={{marginTop:"200px", marginLeft:"680px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={()=>{handleSubmit()}}>NEXT</button>
                 
             </div>
         </div>
