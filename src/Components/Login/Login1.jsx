@@ -17,7 +17,9 @@ const Login1 = props => {
     const handleClick = () => {
         history.push("/register")
     }
+ 
     return (
+
         <div style={{ backgroundImage:`url('back1.JPG')`,height:"100%",padding:"20px"}} className={styles.container} >
             <div className={styles.container_left}>
                 <h1>Sign-in</h1>

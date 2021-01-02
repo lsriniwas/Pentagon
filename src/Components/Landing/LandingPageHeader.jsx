@@ -36,7 +36,7 @@ const LandingPageHeader = () => {
             margin:"auto",
             height:"500px", 
             width:"782px",
-            backgroundImage:`url('back1.jpg')`,
+            backgroundImage:`url('/back1.JPG')`,
             border: "2px solid #000",
             boxShadow: theme.shadows[5],
             
