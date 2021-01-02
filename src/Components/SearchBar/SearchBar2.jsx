@@ -5,14 +5,12 @@ import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-
-import db4 from "../../utils/db4"
+import db4 from "../../Utils/db4"
 import {useDispatch} from "react-redux"
 import { useSelector } from "react-redux"
 import { searchReq } from "../../Redux/JobsRedux/actions"
 import { useHistory } from "react-router-dom"
 import { fetchAllJobs } from '../../Redux/JobsRedux/actions'
-
 const SearchBarWrapper = styled.div`
 width:25%;
 margin:auto;

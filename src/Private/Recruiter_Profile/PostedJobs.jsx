@@ -1,4 +1,4 @@
-import { Accordion, AccordionSummary, LinearProgress, Modal } from '@material-ui/core'
+import { Accordion, AccordionSummary, Button, LinearProgress, Modal } from '@material-ui/core'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
@@ -64,9 +64,11 @@ export const PostedJobs = ({ presentUser }) => {
                                             <p> {item.date} </p>
                                             {
                                                 item.applied?.map(item => 
-                                                <button 
+                                                <Button 
+                                                variant="contained" color="primary"
                                                 key={item}
-                                                onClick={()=>handleOpen(item)}>Applicant Id:{item}</button>)
+                                                style={{margin:10}}
+                                                onClick={()=>handleOpen(item)}>Applicant Id:{item}</Button>)
                                             }
                                         </Typography>
                                     </AccordionDetails>
