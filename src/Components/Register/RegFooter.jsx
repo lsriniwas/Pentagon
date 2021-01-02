@@ -38,6 +38,4 @@ const RegFooter = () => {
         </div>
     )
 }
-
 export default RegFooter
-

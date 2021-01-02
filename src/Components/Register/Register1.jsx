@@ -1,14 +1,10 @@
 import React from "react"
 import TextField from '@material-ui/core/TextField';
-
-
 const Register1 =props=>{
-
     const[name,setName]=React.useState("")
     const[email,setEmail]=React.useState("")
     const[mobile,setMobile]=React.useState("")
     const[password,SetPassword]=React.useState("")
-
     const handleNext=()=>{
         const payload={
             name:name,
@@ -18,7 +14,6 @@ const Register1 =props=>{
         }
         props.handleSubmit(payload)
     }
-
         return (
             <>
             <div style={{
@@ -59,5 +54,4 @@ const Register1 =props=>{
             </>
         )
     }
-
 export { Register1 }

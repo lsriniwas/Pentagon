@@ -8,9 +8,7 @@ import { Route, Redirect, useHistory } from "react-router-dom"
 import styles from '../../Styles/Login.module.css';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { Divider } from "@material-ui/core";
-
 const Login1 = props => {
-
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
     const isAuth = useSelector((state) => state.auth.isAuth)
@@ -67,5 +65,4 @@ const Login1 = props => {
         </div>
     )
 }
-
 export { Login1 }

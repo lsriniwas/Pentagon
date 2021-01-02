@@ -10,7 +10,7 @@ const Register4A = props => {
     const [company, setCompany] = React.useState(false)
     const [designation, setDesignation] = React.useState(false)
     const [selectedDate1, setSelectedDate1] = React.useState(new Date('2014-08-18T21:11:54'))
-    const [selectedDate2, setSelectedDate2] = React.useState(new Date('2014-08-18T21:11:54'))
+    const [selectedDate2, setSelectedDate2] = React.useState(new Date('2021-01-02T21:11:54'))
     const [lakh, setLakh] = React.useState(false)
     const [thousand, setThousand] = React.useState(0)
       
@@ -34,7 +34,7 @@ const Register4A = props => {
     }
 
     return (
-        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, margin:"auto",marginTop:"50px" }}>
+        <div style={{ height: "500px", width: "782px", backgroundImage: `url('back1.jpg')`, margin:"auto",marginTop:"50px",textAlign:"center" }}>
             <h1>Tell us in which company you are working?</h1>
             <h3>If you are not presently working, please enter the company you worked with most recently</h3>
             <TextField id="outlined-basic" label="Company" variant="outlined" onChange={(e) => { setCompany(e.target.value) }} /><br />
@@ -47,7 +47,7 @@ const Register4A = props => {
             {
                 typeof(designation) =="string" && <div>
                     <h5>How long have you been working here</h5>
-                    <div style={{ display: "flex" }}>
+                    <div style={{ display: "flex", marginLeft:"170px" }}>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                             <KeyboardDatePicker
                                 disableToolbar
@@ -82,17 +82,17 @@ const Register4A = props => {
                 </div>
             }
             {
-                typeof(designation) =="string" && <div>
+                typeof(designation) =="string" && <div style={{textAlign:"center",marginTop:"10px"}}>
                     <h2>What's your current Annual Salary?</h2>
-                    <div style={{display:"flex"}}>
+                    <div style={{display:"flex",marginLeft:"200px"}}>
                         <TextField id="outlined-basic" label="Lakh" variant="outlined" onChange={(e) => { setLakh(Number(e.target.value)) }} />
                         <TextField id="outlined-basic" label="Thousand" variant="outlined" onChange={(e) => { setThousand(Number(e.target.value)) }} /><br />
                     </div>
                 </div>
             }
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between",position:"fixed", top:500 }}>
                 <div style={{display:"hidden"}}></div>
-                 <button onClick={()=>{handleSubmit()}}>NEXT</button>
+                 <button style={{marginTop:"200px", marginLeft:"680px", backgroundColor:"white", padding:"5px",borderRadius:"5px", border:"1px solid gray"}} onClick={()=>{handleSubmit()}}>NEXT</button>
                 
             </div>
         </div>

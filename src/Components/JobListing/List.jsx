@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#eee",
     position: 'relative',
     overflow: 'auto',
-    maxHeight: "520px"
+    maxHeight: "780px"
   },
   right : {
     width : "100%",
     maxWidth : "100%",
     overflow : 'auto',
     height : "520px",
-    maxHeight : "520px",
+    maxHeight : "780px",
     marginLeft : "5px"
   }
 }));
@@ -45,13 +45,14 @@ export default function JobListingContent({ data }) {
       const payload1={
           jobs_applied:[...userdata.jobs_applied,id]
       }
-    //   console.log(payload1)
-    //   dispatch(apply_job(payload1,userdata.id))
+      console.log(payload1)
+      dispatch(apply_job(payload1,userdata.id))
       console.log(appliedids)
       const payload2={
           applied:[...appliedids,userdata.id]
       }
       dispatch(job_apply(payload2,id))
+      alert("Applied Successfully")
   }
 
   return (
