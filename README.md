@@ -30,8 +30,8 @@ Clone down this repository. You will need node and npm installed globally on you
 ### Tools Used
 
 ## Contributors
- <h3>Charleson</h3>👨‍- <a href="" >Charleson</a>
-<h3>Anant Jain</h3>👨‍ -  <a href="">Amal</a> 
+ <h3>Charleson David</h3>👨‍- <a href="" >Charleson</a>
+<h3>Amal Biju</h3>👨‍ -  <a href="">Amal</a> 
 <h3>Lanka Sriniwas</h3> 👨‍ - <a href="">lsriniwas</a>
 
 ### Acknowledgments
