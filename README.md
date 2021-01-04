@@ -35,6 +35,8 @@ Clone down this repository. You will need node and npm installed globally on you
 
 ### Tools Used
 
+## <a href="https://pentagon-shine.vercel.app/">Project link</a>
+
 ## Contributors
  <h3>Charleson David</h3>👨‍- <a href="" >Charleson</a>
 <h3>Amal Biju</h3>👨‍ -  <a href="">Amal</a> 
