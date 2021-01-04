@@ -34,10 +34,12 @@ Shine.com connects job seekers and recruiters by accurately matching candidate p
 Clone down this repository. You will need node and npm installed globally on your machine. Installation: npm install To Run Test Suite: npm test To Start Server: npm start To Visit App: localhost:3000/
 
 ## TECH LIBRARY USED:
-React APP
-AXIOS
-Material UI
-antd Design
+  <ul>
+  <li>React APP</li>
+  <li>AXIOS</li>
+  <li>Material UI</li>
+  <li>antd Design</li>
+  </ul>
 
 ## <a href="https://pentagon-shine.vercel.app/">Project link</a>
 
