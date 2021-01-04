@@ -32,10 +32,8 @@ const Dashboard = () => {
             }
         }
         setList(data)
-        console.log(itemList)
     }, [dispatch,key])
     function callback(key) {
-        console.log(key)
         if (key == 1) {
             setKey(1)
             setText(`There are no jobs matching your profile.

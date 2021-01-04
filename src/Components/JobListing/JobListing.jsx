@@ -10,8 +10,6 @@ const JobListing = () => {
     const jobs = useSelector(state => state.job.jobs)
     const data = useSelector((state) => state.auth.userdata)
     jobs.sort((a,b)=>b.id-a.id)
-    console.log(jobs)
-
     const dispatch = useDispatch()
 
     const handleSubmit = () => {

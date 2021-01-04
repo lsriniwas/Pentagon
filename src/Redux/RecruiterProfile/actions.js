@@ -27,7 +27,6 @@ const fetchAllPostedByUser=(id)=>dispatch=>{
       };
       return axios(config)
              .then(({data})=>{
-                 console.log(data)
                  dispatch(requestAllJobsSuccess(data))
              })
              .catch(err=>{
@@ -84,7 +83,6 @@ const requestApplicantDetailsFailure=(err)=>({
 })
 const applicantDetails=(id)=>dispatch=>{
     dispatch(requestApplicantDetails())
-
     var config = {
         method: 'get',
         url: `https://pentagon-shine.herokuapp.com/users?id=${id}`,

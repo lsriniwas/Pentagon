@@ -16,7 +16,6 @@ const JobSearch = ({ value, setValue, handleSubmit }) => {
             <span className={styles.search_icon} onClick={handleSubmit}>
                 <SearchIcon style={{ color : 'white' }} />
             </span></div>
-
             <div style={{marginLeft:"500px"}}>FILTER</div>
         </div>
     )

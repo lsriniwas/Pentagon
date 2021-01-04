@@ -34,7 +34,6 @@ const Register =()=>{
         setStage(stage-1)
     }
     const handleSubmit=(input)=>{
-        console.log(data,input)
         setData({...data,...input})
         if(input.experienced){
             setStage(stage+0.1)
@@ -53,7 +52,6 @@ const Register =()=>{
     }
 
     const handleSubmitfinal=()=>{
-        console.log(data)
         dispatch(Regreq(data))   
     }
 

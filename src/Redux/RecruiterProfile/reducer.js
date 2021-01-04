@@ -38,7 +38,6 @@ const init = {
 
 const applicantReducer= (state = init, { type, payload }) => {
     switch (type) { 
-
     case REQUEST_APPLICANT_DETAILS:
         return {
              ...state, 

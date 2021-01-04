@@ -25,7 +25,6 @@ const Register5 =props=>{
         const payload={
             education:education
         }
-        console.log(payload)
         props.handleSubmit(payload)
     }
 

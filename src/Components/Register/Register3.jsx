@@ -25,7 +25,6 @@ const Register3 = props => {
     const payload = {
       city: city
     }
-    console.log(payload)
     props.handleSubmit(payload)
     setSubmitted(true)
   }

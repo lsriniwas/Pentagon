@@ -5,8 +5,6 @@ import styles from "../../Styles/RecruiterProfile.module.css"
 const ApplicantDetails = ({ handleClose }) => {
     const Data = useSelector(state => state.applicantReducer.applicantDetails[0])
     const loading = useSelector(state => state.applicantReducer.isLoading)
-    const experinence=Data && Data.experience.split(" ")
- 
     return  !loading ?(
     <div className={styles.modal}>
             <div style={{textAlign:"center",margin:4,position:'relative'}}>
@@ -89,41 +87,6 @@ const ApplicantDetails = ({ handleClose }) => {
             </div>
             <div className={styles.profileHeader}>
                 <div>
-                    <TextField
-                        style={{cursor:'pointer'}}
-                        label="Course Type"
-                        InputProps={{
-                            readOnly: true,
-                        }}
-                        defaultValue={Data.course_type}
-                        variant="outlined"
-                    />
-                </div>
-                <div>
-                    <TextField
-                        style={{cursor:'pointer'}}
-                        label="Department"
-                        InputProps={{
-                            readOnly: true,
-                        }}
-                        defaultValue={Data.department}
-                        variant="outlined"
-                    />
-                </div>
-                <div>
-                    <TextField
-                        style={{cursor:'pointer'}}
-                        label="Experience"
-                        InputProps={{
-                            readOnly: true,
-                        }}
-                        defaultValue={`${experinence[0]}yrs ${experinence[1]}mnths`}
-                        variant="outlined"
-                    />
-                </div>
-            </div>
-            <div className={styles.profileHeader}>
-                <div>
 
                 <TextField
                     style={{cursor:'pointer'}}
@@ -159,9 +122,35 @@ const ApplicantDetails = ({ handleClose }) => {
                 />
             </div>
                 </div>
-            <div className={styles.profileHeader}>
+                <div className={styles.profileHeader} style={{display:'grid'}}>
+                <div>
+                    <TextField
+                        style={{cursor:'pointer'}}
+                        label="Course Type"
+                        InputProps={{
+                            readOnly: true,
+                        }}
+                        defaultValue={Data.course_type}
+                        variant="outlined"
+                    />
+                </div>
+                <div>
+                    <TextField
+                        style={{cursor:'pointer'}}
+                        label="Department"
+                        InputProps={{
+                            readOnly: true,
+                        }}
+                        defaultValue={Data.department}
+                        variant="outlined"
+                    />
+                </div>
+               
+            </div>
+            <h1 className={styles.profileHeader} style={{fontWeight:700}}>SKILLS</h1>
+            <div className={styles.profileHeader} style={{display:'flex',justifyContent:'space-around'}}>
                 {
-                    Data.skills.map(item=>
+                   Data.skills.map(item=>
                         <div style={{color:'white',boxShadow:'0 0 12px 0 rgba(132,132,132,0.3)',fontWeight:'700',borderRadius:'5px',textAlign:'center',background:'#b8b8b8',padding:5,margin:5,width:'70px'}}>
                         {item}
                         </div>
@@ -181,9 +170,7 @@ const ApplicantDetails = ({ handleClose }) => {
            <div style={{display:'grid',placeItems:'center',width:'400px',marginTop:'10px'}}>
            <CircularProgress color="primary" />
            </div>
-
        </div>
    )
 }
-
 export { ApplicantDetails }

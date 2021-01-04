@@ -20,7 +20,6 @@ const LandingPageHeader = () => {
     };
 
     const handleSubmit = (email, password) => {
-        console.log("auth", isAuth)
         dispatch(Loginreq(email, password));
         if (isAuth) {
             setTimeout(() => {

@@ -49,7 +49,6 @@ export const logout = () => {
 }
 
 export const Loginreq = (email, pass) => (dispatch) => {
-    console.log("Initiating Login")
     dispatch(loginRequest(email, pass))
     const config = {
         method: 'get',  
@@ -60,10 +59,8 @@ export const Loginreq = (email, pass) => (dispatch) => {
       };
 
     return axios(config).then((res)=>{
-        console.log("logged in",res)
         dispatch(loginSuccess(res.data[0]))
     }).catch((err) => {
-            console.log("error",err)
             dispatch(loginFailure(err))
         })
 
@@ -80,7 +77,6 @@ export const Regreq = (payload) => (dispatch) => {
     }
 console.log("1231",payload)
     return axios(config).then((res) => {
-        
         dispatch(registerSuccess(res.data))
     }).catch((err) => {
         dispatch(registerFailure(err))

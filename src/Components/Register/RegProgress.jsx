@@ -8,7 +8,6 @@ import StepLabel from '@material-ui/core/StepLabel';
 
 
 const RegProgress = props => {
-console.log("Stage",props.stage)
     const useStyles = makeStyles((theme) => ({
         root: {
             width: '100%',

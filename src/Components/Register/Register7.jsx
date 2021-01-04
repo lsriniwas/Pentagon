@@ -30,7 +30,6 @@ const Register7 =props=>{
             skills:skills
 
         }
-        console.log(payload)
         props.handleSubmit(payload)
     }
 

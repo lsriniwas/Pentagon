@@ -41,13 +41,10 @@ export default function JobListingContent({ data }) {
   },[data])
 
   const handleApply=(appliedids)=>{
-      console.log(id,userdata.id)
       const payload1={
           jobs_applied:[...userdata.jobs_applied,id]
       }
-      console.log(payload1)
       dispatch(apply_job(payload1,userdata.id))
-      console.log(appliedids)
       const payload2={
           applied:[...appliedids,userdata.id]
       }
@@ -74,7 +71,7 @@ export default function JobListingContent({ data }) {
             {
                 data?.filter(job => job.id == id).map(job => (
                     <>
-                        <div className={styles.job_details}>
+                        <div key={1} className={styles.job_details}>
                             <h2>{job.jobtitle}</h2>
                             <p>{job.company}</p>
                             <div className={styles.job_details_mid}>

@@ -8,7 +8,6 @@ const initState = {
 }
 
 export const authReducer = (state = initState, { type,payload }) => {
-    console.log("type",type,payload)
     switch (type) {
 
         case LOGIN_REQUEST: {
@@ -20,7 +19,6 @@ export const authReducer = (state = initState, { type,payload }) => {
             }
         }
         case LOGIN_SUCCESS: {
-            console.log(payload)
             return {
                 isAuth: true,
                 userdata:payload,

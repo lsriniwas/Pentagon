@@ -24,7 +24,6 @@ const Register2 =(props)=>{
         const payload={
             gender:sex
         }
-        console.log(payload)
         props.handleSubmit(payload)
     }
   return (

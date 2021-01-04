@@ -35,7 +35,6 @@ export const fetchAllJobs = (query="") => dispatch => {
 }
 
 export const searchReq = (payload) => (dispatch) => {
-    console.log("Initiating Search")
     const config = {
         method: 'get',  
         url: `https://pentagon-shine.herokuapp.com/jobs?q=${payload.query}`,
@@ -45,7 +44,6 @@ export const searchReq = (payload) => (dispatch) => {
       };
 
     return axios(config).then((res)=>{
-        console.log("result",res)
         dispatch(fetchAllJobsSuccess(res.data))
     })        
 }
@@ -58,7 +56,6 @@ export const job_apply = (payload,id) => dispatch => {
     }
     return axios(config)
         .then((res) => {
-            console.log(res)
             // dispatch(fetchAllJobsSuccess(res.data))
         }).catch((err) => {
             // dispatch(fetchAllJobsFailure(err))

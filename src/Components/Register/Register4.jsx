@@ -37,7 +37,6 @@ const Register4 = props => {
                 company: false
             }
         }
-        console.log(payload)
         props.handleSubmit(payload)
     }
 

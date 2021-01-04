@@ -60,7 +60,6 @@ function SearchBar2() {
     const [suggestion2, setSuggestions2] = useState([])
     const history = useHistory()
     const jobs = useSelector((state) => state.job.jobs)
-    console.log("jobs",jobs)
     const dispatch = useDispatch()
 
 
@@ -87,7 +86,6 @@ function SearchBar2() {
             i--
             }
         }}
-        console.log(out)
         setLoading(false)
       },[query])
 
@@ -102,7 +100,7 @@ function SearchBar2() {
           .map((item)=>item.city)
           setSuggestions2(out)    
         }
-        console.log(out)
+
         setLoading(false)
       },[location])
 
@@ -112,7 +110,6 @@ function SearchBar2() {
               location:location,
               exp:experience
           }
-          console.log(payload)
           dispatch(searchReq(payload))
           history.push(`/listings`)
       }
@@ -165,8 +162,15 @@ function SearchBar2() {
           <MenuItem value="10+">10+ Years</MenuItem>          
         </Select>
         </FormControl>
-
-        <button style={{height:"50px",marginTop:"75px", width:"10%"}} onClick={()=>handleSubmit()}>SUBMIT</button>
+        
+        <button style={{
+        background:'#FBAF18',
+        height:"50px",marginTop:"75px", width:"10%",
+        outline:'none',
+        border:'none',
+        color:'#fff',
+        fontWeight:900  
+          }} onClick={()=>handleSubmit()}>SUBMIT</button>
     
     </div>
     )

@@ -29,7 +29,6 @@ const Register8 = props => {
             "resume":"n/a"
 
         }
-        console.log(payload)
         props.handleSubmit(payload)
     }
 

@@ -18,13 +18,15 @@
     align-items: center;
 }
 
-
 .logo {
+    margin: 0px 50px!important;
     width: 80px;
     height: 55px;
 }
 .links,.links_border {
     padding: 8px 10px;
+    font-size: 12px;
+    width:100px;
 }
 .links:hover,.links_border:hover {
     cursor: pointer;
@@ -34,6 +36,7 @@
 }
 
 .covid {
+    width:150px !important;
     background: #FFF4F6 !important;
     border: solid 1px #ffdfcc !important;
     border-radius: 4px;
@@ -49,6 +52,7 @@
     border: 1px solid white;
     border-radius: 5px;
 }
+
 .contact p:last-child {
     font-size: 11px;
     opacity: 0.5;
@@ -76,5 +80,6 @@
 
 .navbar_main p{
     margin-top:8px;
+    font-size: 10px!important;
 }
 

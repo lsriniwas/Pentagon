@@ -32,7 +32,6 @@ const Register6 =props=>{
             course_type:type
 
         }
-        console.log(payload)
         props.handleSubmit(payload)
     }
 
