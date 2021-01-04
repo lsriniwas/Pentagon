@@ -1,5 +1,4 @@
-#  Team Pentagon
-#  Shine.com Clone
+#  Team Pentagon - Shine.com Clone
 
 <div>
   <h4>
@@ -8,7 +7,7 @@ Shine.com connects job seekers and recruiters by accurately matching candidate p
     </h4>
  </div>
 
-## Languages and Tools
+## Tech Stack used:
 
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>
@@ -33,7 +32,7 @@ Shine.com connects job seekers and recruiters by accurately matching candidate p
 
 Clone down this repository. You will need node and npm installed globally on your machine. Installation: npm install To Run Test Suite: npm test To Start Server: npm start To Visit App: localhost:3000/
 
-## TECH LIBRARY USED:
+## Tech Library used:
   <ul>
   <li>React APP</li>
   <li>AXIOS</li>
