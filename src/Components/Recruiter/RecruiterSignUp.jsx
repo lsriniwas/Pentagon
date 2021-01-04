@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { addRecruiter, fetchRecruiters } from '../../Redux/RecruitRedux/action';
 import styles from "./Recruiter.module.css"
 import { UseSignUpDataHOOK } from './UseSignUpDataHOOK';
@@ -24,10 +25,11 @@ const init = {
     password: "",
     type: "",
     location:"",
-    "company_name":""
+    company_name:""
 };
 
 const RecruiterSignUp = () => {
+    const history = useHistory()
     const [value, setValue] = UseSignUpDataHOOK(init);
     const [error,setError]=useState(false)
     const dispatch=useDispatch()
@@ -46,8 +48,13 @@ const RecruiterSignUp = () => {
             setError(true)
         }
         else{
-            setError(false)
-            dispatch(addRecruiter(formData))
+            setError(false) 
+            dispatch(addRecruiter(formData)) 
+            dispatch(fetchRecruiters())
+            alert("Registration Succesful")
+            setValue(init)
+            const location = { pathname: '/recruiter-profile', state: {formData} } 
+            history.push(location) 
         }
       };
     return (

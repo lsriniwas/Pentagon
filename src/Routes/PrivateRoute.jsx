@@ -5,12 +5,18 @@ import { Route, Redirect } from "react-router-dom"
 
 export const PrivateRoute = ({children}) => {
     const recruiterIsAuth=useSelector(state=>state.recruiter.recruiterIsAuth)
+    const userIsAuth=useSelector(state=>state.auth.isAuth)
     return recruiterIsAuth? (
                         <div>
                            {children}
                         </div>
-                    ) : (
-                            <Redirect to="/recruiter" />
+                    ) : userIsAuth?(
+                        <div>
+                           {children}
+                        </div>
+                    ):
+                    (
+                            <Redirect to="/" />
 
-                        )           
+                    )           
 }

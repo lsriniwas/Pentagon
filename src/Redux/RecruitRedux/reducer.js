@@ -1,5 +1,4 @@
-import { FETCH_RECRUITERS_LIST, FETCH_RECRUITERS_LIST_FAILURE, FETCH_RECRUITERS_LIST_SUCCESS, REQUEST_RECRUITER_ISAUTHLOGOUT, REQUEST_RECRUITER_ISAUTHSUCCESS } from "./actionTypes";
-
+import { FETCH_RECRUITERS_LIST, FETCH_RECRUITERS_LIST_FAILURE, FETCH_RECRUITERS_LIST_SUCCESS, REQUEST_RECRUITER_ISAUTHLOGOUT, REQUEST_RECRUITER_ISAUTHSUCCESS, REQUEST_RECRUITER_POSTED_JOBS } from "./actionTypes";
 const initialState={
     recruiterIsAuth:false,
     recruiterList:[],
@@ -7,7 +6,6 @@ const initialState={
     error:false,
     error_msg:""
 }
-
 const reducer=(state = initialState, { type, payload }) => {
     switch (type) {
     case FETCH_RECRUITERS_LIST:
@@ -41,5 +39,4 @@ const reducer=(state = initialState, { type, payload }) => {
         return state
     }
 }
-
 export {reducer}
