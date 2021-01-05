@@ -61,7 +61,7 @@ const LandingPageHeader = () => {
                 <div className={styles.registration}>
                 <button><Link to={'/register'}>Register for free</Link></button>
                 <div className={styles.sign_in}>
-                            <button onClick={() => setOpen(true)}>Sign In</button>
+                            <div onClick={() => setOpen(true)}>Sign In</div>
                             <Modal className={classes.paper}
                                 open={open}
                                 onClose={handleCancel}
@@ -72,10 +72,7 @@ const LandingPageHeader = () => {
                                     error={error}
 
                                 />
-
                             </Modal>
-
-
                         </div>
                 </div>
             </div>

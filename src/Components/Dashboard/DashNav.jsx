@@ -12,7 +12,7 @@ const DashNav = (props) => {
     const history = useHistory()
     const dispatch = useDispatch()
     const onClick = ({ key }) => {
-        if(key==6){
+        if(key === "6"){
             dispatch(logout())
         };
     };
@@ -34,27 +34,25 @@ const DashNav = (props) => {
 
     return (
         <div className={styles.navbar_main}>
-        
-        <div className={styles.navbar_wrapper} >
-            <img src={process.env.PUBLIC_URL + '/nav_logo.png'} alt="Logo" className={styles.logo} />
-            <p className={styles.links}>Search Jobs</p>
-            <p className={styles.links}>Jobs for You</p>
-            <p className={styles.links}>Mailbox</p>
-            <p className={styles.links} onClick={handlePush}>Profile</p>
-            <p className={styles.links}>My Job Alerts</p>
-            <p className={styles.links} >Services</p>
-            <p className={styles.covid}>COVID-19 Career Guide</p>
+            <div className={styles.navbar_wrapper} >
+                <img src={process.env.PUBLIC_URL + '/nav_logo.png'} alt="Logo" className={styles.logo} />
+                <p className={styles.links}>Search Jobs</p>
+                <p className={styles.links}>Jobs for You</p>
+                <p className={styles.links}>Mailbox</p>
+                <p className={styles.links} onClick={handlePush}>Profile</p>
+                <p className={styles.links}>My Job Alerts</p>
+                <p className={styles.links} >Services</p>
+                <p className={styles.covid}>COVID-19 Career Guide</p>
             </div>
             <div style={{display:"flex"}}>
-            <img src={process.env.PUBLIC_URL + '/cart.png'} alt="" srcset="" height="30px" style={{marginRight:"20px"}}/>
+                <img src={process.env.PUBLIC_URL + '/cart.png'} alt="" srcset="" height="30px" style={{marginRight:"20px"}}/>
                 <img src={process.env.PUBLIC_URL + '/bell.png'} alt="" srcset="" height="30px"/>
-
-            <Dropdown overlay={menu} >
-                <a className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{border:"1px solid white", padding:"5px", color:"white", width:"max-content", fontSize:"larger", marginRight:"120px", marginLeft:"40px"}}>
-                   Hi, {props.name} <DownOutlined />
-                </a>
-            </Dropdown>
-        </div>
+                <Dropdown overlay={menu} >
+                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{border:"1px solid white", padding:"5px", color:"white", width:"max-content", fontSize:"larger", marginRight:"120px", marginLeft:"40px"}}>
+                    Hi, {props.name} <DownOutlined />
+                    </a>
+                </Dropdown>
+            </div>
         </div>
     )
 }

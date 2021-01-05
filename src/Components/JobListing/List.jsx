@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#eee",
     position: 'relative',
     overflow: 'auto',
-    maxHeight: "780px"
+    maxHeight: "520px"
   },
   right : {
     width : "100%",
     maxWidth : "100%",
     overflow : 'auto',
     height : "520px",
-    maxHeight : "780px",
+    maxHeight : "520px",
     marginLeft : "5px"
   }
 }));
