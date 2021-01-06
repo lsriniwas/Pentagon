@@ -23,6 +23,9 @@ Shine.com connects job seekers and recruiters by accurately matching candidate p
 ![gif](./screenshots/landing.png)
 
 ## <code>Recruiter Page</code>
+![gif](./screenshots/recruiter.png)
+
+## <code>Applicant Register Page</code>
 ![gif](./screenshots/register.png)
 
 ## Sneak peek
